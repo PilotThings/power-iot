@@ -1,0 +1,45 @@
+{
+  "afdbf7f1-ff32-4402-9fc1-f44d03e313a0": {
+    "connectionInstanceId": "/providers/microsoft.powerapps/apis/shared_pilotthings/connections/795175e825434caf90b1718aec624d22",
+    "connectionParameters": {
+      "host": "mypower-132918.azurewebsites.net",
+      "sku": "Enterprise"
+    },
+    "connectionRef": {
+      "apiTier": "Premium",
+      "displayName": "Pilot Things",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1539/1.0.1539.2620/pilotthings/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_pilotthings",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {},
+    "dataSources": [
+      "PilotThings"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "afdbf7f1-ff32-4402-9fc1-f44d03e313a0"
+  },
+  "cfae01a3-bf73-4979-a9df-bc1f4b6b4daa": {
+    "connectionInstanceId": "/providers/microsoft.powerapps/apis/shared_microsoftspatialservices/connections/d08506515702452bbc275697d87550c6",
+    "connectionParameters": {
+      "sku": "Enterprise"
+    },
+    "connectionRef": {
+      "apiTier": "Premium",
+      "displayName": "Spatial Services",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1573/1.0.1573.2770/microsoftspatialservices/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_microsoftspatialservices",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {},
+    "dataSources": [
+      "SpatialServices"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "cfae01a3-bf73-4979-a9df-bc1f4b6b4daa"
+  }
+}

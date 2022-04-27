@@ -1,0 +1,2366 @@
+<application xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:service="https://europe-002.azure-apim.net/apim/pilotthings" xmlns:siena="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11" siena:serviceId="PilotThings" xmlns="http://wadl.dev.java.net/2009/02">
+  <doc title="Pilot Things">Pilot Things is a platform to manage, visualize, automate and integrate your IoT device fleet.</doc>
+  <grammars>
+    <jsonTypes targetNamespace="https://europe-002.azure-apim.net/apim/pilotthings" xmlns="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11">
+      <array typeRef="MeasureRo" name="PageMeasureRo_data_def" />
+      <integer name="PageMeasureRo_end_def" />
+      <integer name="PageMeasureRo_page_def" />
+      <integer name="PageMeasureRo_pageSize_def" />
+      <integer name="PageMeasureRo_start_def" />
+      <integer name="PageMeasureRo_totalSize_def" />
+      <object name="PageMeasureRo">
+        <property name="data" typeRef="PageMeasureRo_data_def" />
+        <property name="end" type="integer" />
+        <property name="page" type="integer" />
+        <property name="pageSize" type="integer" />
+        <property name="start" type="integer" />
+        <property name="totalSize" type="integer" />
+      </object>
+      <integer name="StatsGraphRo_count_def" />
+      <integer name="StatsGraphRo_end_def" />
+      <integer name="StatsGraphRo_last_def" />
+      <number name="StatsGraphRo_max_def" />
+      <number name="StatsGraphRo_min_def" />
+      <integer name="StatsGraphRo_start_def" />
+      <string name="StatsGraphRo_unit_def" />
+      <number name="StatsGraphRo_value_def" />
+      <object name="StatsGraphRo">
+        <property name="count" type="integer" />
+        <property name="end" type="integer" />
+        <property name="last" type="integer" />
+        <property name="max" type="number" />
+        <property name="min" type="number" />
+        <property name="start" type="integer" />
+        <property name="unit" type="string" />
+        <property name="value" type="number" />
+      </object>
+      <boolean name="JsonNode_array_def" />
+      <boolean name="JsonNode_bigDecimal_def" />
+      <boolean name="JsonNode_bigInteger_def" />
+      <boolean name="JsonNode_binary_def" />
+      <boolean name="JsonNode_boolean_def" />
+      <boolean name="JsonNode_containerNode_def" />
+      <boolean name="JsonNode_double_def" />
+      <boolean name="JsonNode_float_def" />
+      <boolean name="JsonNode_floatingPointNumber_def" />
+      <boolean name="JsonNode_int_def" />
+      <boolean name="JsonNode_integralNumber_def" />
+      <boolean name="JsonNode_long_def" />
+      <boolean name="JsonNode_missingNode_def" />
+      <string name="JsonNode_nodeType_def" />
+      <boolean name="JsonNode_null_def" />
+      <boolean name="JsonNode_number_def" />
+      <boolean name="JsonNode_object_def" />
+      <boolean name="JsonNode_pojo_def" />
+      <boolean name="JsonNode_short_def" />
+      <boolean name="JsonNode_textual_def" />
+      <boolean name="JsonNode_valueNode_def" />
+      <object name="JsonNode">
+        <property name="array" type="boolean" />
+        <property name="bigDecimal" type="boolean" />
+        <property name="bigInteger" type="boolean" />
+        <property name="binary" type="boolean" />
+        <property name="boolean" type="boolean" />
+        <property name="containerNode" type="boolean" />
+        <property name="double" type="boolean" />
+        <property name="float" type="boolean" />
+        <property name="floatingPointNumber" type="boolean" />
+        <property name="int" type="boolean" />
+        <property name="integralNumber" type="boolean" />
+        <property name="long" type="boolean" />
+        <property name="missingNode" type="boolean" />
+        <property name="nodeType" type="string" />
+        <property name="null" type="boolean" />
+        <property name="number" type="boolean" />
+        <property name="object" type="boolean" />
+        <property name="pojo" type="boolean" />
+        <property name="short" type="boolean" />
+        <property name="textual" type="boolean" />
+        <property name="valueNode" type="boolean" />
+      </object>
+      <string name="MeasureRo_dtype_def" />
+      <string name="MeasureRo_id_def" />
+      <integer name="MeasureRo_timestamp_def" />
+      <string name="MeasureRo_value_def" />
+      <object name="MeasureRo">
+        <property name="attribute" typeRef="AttributeTinyRo" />
+        <property name="dtype" type="string" />
+        <property name="id" type="string" />
+        <property name="model" typeRef="ModelTinyRo" />
+        <property name="product" typeRef="ProductTinyRo" />
+        <property name="thing" typeRef="ThingTinyRo" />
+        <property name="timestamp" type="integer" />
+        <property name="value" type="string" />
+      </object>
+      <string name="MessageRo_body_def" />
+      <dateTimeString name="MessageRo_creationDate_def" />
+      <string name="MessageRo_errorMessage_def" />
+      <string name="MessageRo_id_def" />
+      <number name="MessageRo_latitude_def" />
+      <number name="MessageRo_longitude_def" />
+      <string name="MessageRo_metadata_def" />
+      <integer name="MessageRo_number_def" />
+      <string name="MessageRo_processed_def" />
+      <dateTimeString name="MessageRo_timestamp_def" />
+      <string name="MessageRo_topic_def" />
+      <object name="MessageRo">
+        <property name="body" type="string" />
+        <property name="creationDate" typeRef="MessageRo_creationDate_def" />
+        <property name="errorMessage" type="string" />
+        <property name="id" type="string" />
+        <property name="latitude" type="number" />
+        <property name="link" typeRef="URI" />
+        <property name="longitude" type="number" />
+        <property name="measurements" typeRef="JsonNode" />
+        <property name="metadata" type="string" />
+        <property name="number" type="integer" />
+        <property name="processed" type="string" />
+        <property name="rawMeasurements" typeRef="JsonNode" />
+        <property name="thing" typeRef="ThingTinyRo" />
+        <property name="timestamp" typeRef="MessageRo_timestamp_def" />
+        <property name="topic" type="string" />
+      </object>
+      <string name="TagRo_id_def" />
+      <string name="TagRo_tag_def" />
+      <object name="TagRo">
+        <property name="id" type="string" />
+        <property name="tag" type="string" />
+      </object>
+      <string name="AlertRo_comment_def" />
+      <integer name="AlertRo_creationDate_def" />
+      <string name="AlertRo_id_def" />
+      <integer name="AlertRo_lastUpdate_def" />
+      <string name="AlertRo_level_def" />
+      <string name="AlertRo_message_def" />
+      <string name="AlertRo_state_def" />
+      <string name="AlertRo_username_def" />
+      <object name="AlertRo">
+        <property name="comment" type="string" />
+        <property name="creationDate" type="integer" />
+        <property name="flowOrigin" typeRef="FlowTinyRo" />
+        <property name="id" type="string" />
+        <property name="lastUpdate" type="integer" />
+        <property name="level" type="string" />
+        <property name="message" type="string" />
+        <property name="state" type="string" />
+        <property name="thing" typeRef="ThingTinyRo" />
+        <property name="username" type="string" />
+      </object>
+      <array typeRef="SiteRo" name="PageSiteRo_data_def" />
+      <integer name="PageSiteRo_end_def" />
+      <integer name="PageSiteRo_page_def" />
+      <integer name="PageSiteRo_pageSize_def" />
+      <integer name="PageSiteRo_start_def" />
+      <integer name="PageSiteRo_totalSize_def" />
+      <object name="PageSiteRo">
+        <property name="data" typeRef="PageSiteRo_data_def" />
+        <property name="end" type="integer" />
+        <property name="page" type="integer" />
+        <property name="pageSize" type="integer" />
+        <property name="start" type="integer" />
+        <property name="totalSize" type="integer" />
+      </object>
+      <array typeRef="StatsMeasureRo" name="PageStatsMeasureRo_data_def" />
+      <integer name="PageStatsMeasureRo_end_def" />
+      <integer name="PageStatsMeasureRo_page_def" />
+      <integer name="PageStatsMeasureRo_pageSize_def" />
+      <integer name="PageStatsMeasureRo_start_def" />
+      <integer name="PageStatsMeasureRo_totalSize_def" />
+      <object name="PageStatsMeasureRo">
+        <property name="data" typeRef="PageStatsMeasureRo_data_def" />
+        <property name="end" type="integer" />
+        <property name="page" type="integer" />
+        <property name="pageSize" type="integer" />
+        <property name="start" type="integer" />
+        <property name="totalSize" type="integer" />
+      </object>
+      <array typeRef="CustomFieldRo" name="SingleThingRo_customFields_def" />
+      <string name="SingleThingRo_description_def" />
+      <string name="SingleThingRo_displayName_def" />
+      <boolean name="SingleThingRo_dynamicGps_def" />
+      <number name="SingleThingRo_fixedLatitude_def" />
+      <number name="SingleThingRo_fixedLongitude_def" />
+      <string name="SingleThingRo_fixedName_def" />
+      <string name="SingleThingRo_id_def" />
+      <integer name="SingleThingRo_lastActivityDate_def" />
+      <number name="SingleThingRo_lastLatitude_def" />
+      <number name="SingleThingRo_lastLongitude_def" />
+      <integer name="SingleThingRo_lastMessageDate_def" />
+      <integer name="SingleThingRo_messageActivityTimeoutPeriod_def" />
+      <string name="SingleThingRo_name_def" />
+      <integer name="SingleThingRo_nbAlerts_def" />
+      <string name="SingleThingRo_sourceId_def" />
+      <string name="SingleThingRo_status_def" />
+      <array typeRef="ThingTagRo" name="SingleThingRo_tags_def" />
+      <object name="SingleThingRo">
+        <property name="application" typeRef="ApplicationTinyRo" />
+        <property name="connectivity" typeRef="ConnectivityRo" />
+        <property name="customFields" typeRef="SingleThingRo_customFields_def" />
+        <property name="customModel" typeRef="CustomModelTinyRo" />
+        <property name="description" type="string" />
+        <property name="device" typeRef="DeviceRo" />
+        <property name="displayName" type="string" />
+        <property name="dynamicGps" type="boolean" />
+        <property name="fixedLatitude" type="number" />
+        <property name="fixedLongitude" type="number" />
+        <property name="fixedName" type="string" />
+        <property name="id" type="string" />
+        <property name="lastActivityDate" type="integer" />
+        <property name="lastLatitude" type="number" />
+        <property name="lastLongitude" type="number" />
+        <property name="lastMeasurements" typeRef="JsonNode" />
+        <property name="lastMeasurementsTimestamps" typeRef="JsonNode" />
+        <property name="lastMessageDate" type="integer" />
+        <property name="messageActivityTimeoutPeriod" type="integer" />
+        <property name="name" type="string" />
+        <property name="nbAlerts" type="integer" />
+        <property name="product" typeRef="ProductTinyRo" />
+        <property name="site" typeRef="SiteRo" />
+        <property name="sourceId" type="string" />
+        <property name="status" type="string" />
+        <property name="tags" typeRef="SingleThingRo_tags_def" />
+      </object>
+      <string name="EncoderTinyRo_id_def" />
+      <string name="EncoderTinyRo_link_def" />
+      <object name="EncoderTinyRo">
+        <property name="id" type="string" />
+        <property name="link" type="string" />
+      </object>
+      <string name="SiteRo_address_def" />
+      <string name="SiteRo_city_def" />
+      <string name="SiteRo_id_def" />
+      <number name="SiteRo_latitude_def" />
+      <number name="SiteRo_longitude_def" />
+      <string name="SiteRo_name_def" />
+      <string name="SiteRo_postalCode_def" />
+      <object name="SiteRo">
+        <property name="address" type="string" />
+        <property name="city" type="string" />
+        <property name="id" type="string" />
+        <property name="latitude" type="number" />
+        <property name="longitude" type="number" />
+        <property name="name" type="string" />
+        <property name="postalCode" type="string" />
+      </object>
+      <integer name="DeviceRo_batteryLevel_def" />
+      <string name="DeviceRo_batteryStatus_def" />
+      <string name="DeviceRo_deviceType_def" />
+      <string name="DeviceRo_id_def" />
+      <string name="DeviceRo_manufacturer_def" />
+      <integer name="DeviceRo_memoryFree_def" />
+      <integer name="DeviceRo_memoryTotal_def" />
+      <string name="DeviceRo_model_def" />
+      <string name="DeviceRo_modelNumber_def" />
+      <string name="DeviceRo_name_def" />
+      <string name="DeviceRo_serialNumber_def" />
+      <string name="DeviceRo_status_def" />
+      <object name="DeviceRo">
+        <property name="batteryLevel" type="integer" />
+        <property name="batteryStatus" type="string" />
+        <property name="deviceType" type="string" />
+        <property name="id" type="string" />
+        <property name="manufacturer" type="string" />
+        <property name="memoryFree" type="integer" />
+        <property name="memoryTotal" type="integer" />
+        <property name="model" type="string" />
+        <property name="modelNumber" type="string" />
+        <property name="name" type="string" />
+        <property name="serialNumber" type="string" />
+        <property name="status" type="string" />
+      </object>
+      <boolean name="FlowTinyRo_enabled_def" />
+      <string name="FlowTinyRo_id_def" />
+      <string name="FlowTinyRo_name_def" />
+      <object name="FlowTinyRo">
+        <property name="enabled" type="boolean" />
+        <property name="id" type="string" />
+        <property name="name" type="string" />
+      </object>
+      <array typeRef="PageCustomFieldRo" name="PageCustomFieldRo_data_def" />
+      <integer name="PageCustomFieldRo_end_def" />
+      <integer name="PageCustomFieldRo_page_def" />
+      <integer name="PageCustomFieldRo_pageSize_def" />
+      <integer name="PageCustomFieldRo_start_def" />
+      <integer name="PageCustomFieldRo_totalSize_def" />
+      <object name="PageCustomFieldRo">
+        <property name="data" typeRef="PageCustomFieldRo_data_def" />
+        <property name="end" type="integer" />
+        <property name="page" type="integer" />
+        <property name="pageSize" type="integer" />
+        <property name="start" type="integer" />
+        <property name="totalSize" type="integer" />
+      </object>
+      <string name="AttributeRo_description_def" />
+      <string name="AttributeRo_id_def" />
+      <string name="AttributeRo_name_def" />
+      <string name="AttributeRo_unit_def" />
+      <object name="AttributeRo">
+        <property name="description" type="string" />
+        <property name="id" type="string" />
+        <property name="name" type="string" />
+        <property name="type" typeRef="QuantityKindRo" />
+        <property name="unit" type="string" />
+      </object>
+      <string name="StatsCountRo_name_def" />
+      <number name="StatsCountRo_value_def" />
+      <object name="StatsCountRo">
+        <property name="name" type="string" />
+        <property name="value" type="number" />
+      </object>
+      <string name="ProductRo_certification_def" />
+      <string name="ProductRo_connectivityTypes_def_items_def" />
+      <array type="string" name="ProductRo_connectivityTypes_def" />
+      <string name="ProductRo_description_def" />
+      <boolean name="ProductRo_generateLinks_def" />
+      <boolean name="ProductRo_hasImage_def" />
+      <string name="ProductRo_id_def" />
+      <string name="ProductRo_imageLink_def" />
+      <string name="ProductRo_infoLink_def" />
+      <string name="ProductRo_link_def" />
+      <string name="ProductRo_manufacturerCategory_def" />
+      <string name="ProductRo_name_def" />
+      <boolean name="ProductRo_readOnly_def" />
+      <string name="ProductRo_reference_def" />
+      <array typeRef="TagRo" name="ProductRo_tags_def" />
+      <array typeRef="ThingTinyRo" name="ProductRo_things_def" />
+      <object name="ProductRo">
+        <property name="certification" type="string" />
+        <property name="connectivityTypes" typeRef="ProductRo_connectivityTypes_def" />
+        <property name="decoder" typeRef="DecoderTinyRo" />
+        <property name="description" type="string" />
+        <property name="encoder" typeRef="EncoderTinyRo" />
+        <property name="generateLinks" type="boolean" />
+        <property name="hasImage" type="boolean" />
+        <property name="id" type="string" />
+        <property name="imageLink" type="string" />
+        <property name="infoLink" type="string" />
+        <property name="link" type="string" />
+        <property name="manufacturer" typeRef="ManufacturerTinyRo" />
+        <property name="manufacturerCategory" type="string" />
+        <property name="model" typeRef="ModelTinyRo" />
+        <property name="modelManufacturer" typeRef="ManufacturerTinyRo" />
+        <property name="name" type="string" />
+        <property name="readOnly" type="boolean" />
+        <property name="reference" type="string" />
+        <property name="tags" typeRef="ProductRo_tags_def" />
+        <property name="things" typeRef="ProductRo_things_def" />
+      </object>
+      <string name="QuantityKindRo_defaultUnit_def" />
+      <string name="QuantityKindRo_name_def" />
+      <string name="QuantityKindRo_type_def" />
+      <object name="QuantityKindRo">
+        <property name="defaultUnit" type="string" />
+        <property name="name" type="string" />
+        <property name="type" type="string" />
+      </object>
+      <string name="DecoderTinyRo_id_def" />
+      <string name="DecoderTinyRo_link_def" />
+      <boolean name="DecoderTinyRo_visible_def" />
+      <object name="DecoderTinyRo">
+        <property name="id" type="string" />
+        <property name="link" type="string" />
+        <property name="visible" type="boolean" />
+      </object>
+      <array typeRef="AlertRo" name="PageAlertRo_data_def" />
+      <integer name="PageAlertRo_end_def" />
+      <integer name="PageAlertRo_page_def" />
+      <integer name="PageAlertRo_pageSize_def" />
+      <integer name="PageAlertRo_start_def" />
+      <integer name="PageAlertRo_totalSize_def" />
+      <object name="PageAlertRo">
+        <property name="data" typeRef="PageAlertRo_data_def" />
+        <property name="end" type="integer" />
+        <property name="page" type="integer" />
+        <property name="pageSize" type="integer" />
+        <property name="start" type="integer" />
+        <property name="totalSize" type="integer" />
+      </object>
+      <integer name="StatsMeasureRo_timestamp_def" />
+      <string name="StatsMeasureRo_value_def" />
+      <object name="StatsMeasureRo">
+        <property name="attribute" typeRef="AttributeRo" />
+        <property name="timestamp" type="integer" />
+        <property name="value" type="string" />
+      </object>
+      <string name="OperationRo_args_def" />
+      <string name="OperationRo_description_def" />
+      <string name="OperationRo_id_def" />
+      <string name="OperationRo_name_def" />
+      <object name="OperationRo">
+        <property name="args" type="string" />
+        <property name="description" type="string" />
+        <property name="id" type="string" />
+        <property name="name" type="string" />
+      </object>
+      <string name="ConnectivityRo_additionalProperties_def_mapValues_def" />
+      <mapObject name="ConnectivityRo_additionalProperties_def">
+        <values type="string" />
+      </mapObject>
+      <string name="ConnectivityRo_id_def" />
+      <string name="ConnectivityRo_rawStatus_def" />
+      <string name="ConnectivityRo_status_def" />
+      <string name="ConnectivityRo_type_def" />
+      <object name="ConnectivityRo">
+        <property name="additionalProperties" typeRef="ConnectivityRo_additionalProperties_def" />
+        <property name="id" type="string" />
+        <property name="rawStatus" type="string" />
+        <property name="status" type="string" />
+        <property name="type" type="string" />
+      </object>
+      <integer name="CountRo_count_def" />
+      <object name="CountRo">
+        <property name="count" type="integer" />
+      </object>
+      <string name="MessageTinyRo_id_def" />
+      <integer name="MessageTinyRo_number_def" />
+      <object name="MessageTinyRo">
+        <property name="id" type="string" />
+        <property name="link" typeRef="URI" />
+        <property name="number" type="integer" />
+      </object>
+      <boolean name="URI_absolute_def" />
+      <string name="URI_authority_def" />
+      <string name="URI_fragment_def" />
+      <string name="URI_host_def" />
+      <boolean name="URI_opaque_def" />
+      <string name="URI_path_def" />
+      <integer name="URI_port_def" />
+      <string name="URI_query_def" />
+      <string name="URI_rawAuthority_def" />
+      <string name="URI_rawFragment_def" />
+      <string name="URI_rawPath_def" />
+      <string name="URI_rawQuery_def" />
+      <string name="URI_rawSchemeSpecificPart_def" />
+      <string name="URI_rawUserInfo_def" />
+      <string name="URI_scheme_def" />
+      <string name="URI_schemeSpecificPart_def" />
+      <string name="URI_userInfo_def" />
+      <object name="URI">
+        <property name="absolute" type="boolean" />
+        <property name="authority" type="string" />
+        <property name="fragment" type="string" />
+        <property name="host" type="string" />
+        <property name="opaque" type="boolean" />
+        <property name="path" type="string" />
+        <property name="port" type="integer" />
+        <property name="query" type="string" />
+        <property name="rawAuthority" type="string" />
+        <property name="rawFragment" type="string" />
+        <property name="rawPath" type="string" />
+        <property name="rawQuery" type="string" />
+        <property name="rawSchemeSpecificPart" type="string" />
+        <property name="rawUserInfo" type="string" />
+        <property name="scheme" type="string" />
+        <property name="schemeSpecificPart" type="string" />
+        <property name="userInfo" type="string" />
+      </object>
+      <array typeRef="ThingTagRo" name="PageThingTagRo_data_def" />
+      <integer name="PageThingTagRo_end_def" />
+      <integer name="PageThingTagRo_page_def" />
+      <integer name="PageThingTagRo_pageSize_def" />
+      <integer name="PageThingTagRo_start_def" />
+      <integer name="PageThingTagRo_totalSize_def" />
+      <object name="PageThingTagRo">
+        <property name="data" typeRef="PageThingTagRo_data_def" />
+        <property name="end" type="integer" />
+        <property name="page" type="integer" />
+        <property name="pageSize" type="integer" />
+        <property name="start" type="integer" />
+        <property name="totalSize" type="integer" />
+      </object>
+      <array typeRef="CustomFieldRo" name="ThingRo_customFields_def" />
+      <string name="ThingRo_description_def" />
+      <string name="ThingRo_displayName_def" />
+      <boolean name="ThingRo_dynamicGps_def" />
+      <number name="ThingRo_fixedLatitude_def" />
+      <number name="ThingRo_fixedLongitude_def" />
+      <string name="ThingRo_fixedName_def" />
+      <string name="ThingRo_id_def" />
+      <integer name="ThingRo_lastActivityDate_def" />
+      <number name="ThingRo_lastLatitude_def" />
+      <number name="ThingRo_lastLongitude_def" />
+      <integer name="ThingRo_lastMessageDate_def" />
+      <integer name="ThingRo_messageActivityTimeoutPeriod_def" />
+      <string name="ThingRo_name_def" />
+      <integer name="ThingRo_nbAlerts_def" />
+      <string name="ThingRo_status_def" />
+      <array typeRef="ThingTagRo" name="ThingRo_tags_def" />
+      <object name="ThingRo">
+        <property name="customFields" typeRef="ThingRo_customFields_def" />
+        <property name="description" type="string" />
+        <property name="displayName" type="string" />
+        <property name="dynamicGps" type="boolean" />
+        <property name="fixedLatitude" type="number" />
+        <property name="fixedLongitude" type="number" />
+        <property name="fixedName" type="string" />
+        <property name="id" type="string" />
+        <property name="lastActivityDate" type="integer" />
+        <property name="lastLatitude" type="number" />
+        <property name="lastLongitude" type="number" />
+        <property name="lastMeasurements" typeRef="JsonNode" />
+        <property name="lastMeasurementsTimestamps" typeRef="JsonNode" />
+        <property name="lastMessageDate" type="integer" />
+        <property name="messageActivityTimeoutPeriod" type="integer" />
+        <property name="name" type="string" />
+        <property name="nbAlerts" type="integer" />
+        <property name="site" typeRef="SiteRo" />
+        <property name="status" type="string" />
+        <property name="tags" typeRef="ThingRo_tags_def" />
+      </object>
+      <array typeRef="OperationRo" name="PageOperationRo_data_def" />
+      <integer name="PageOperationRo_end_def" />
+      <integer name="PageOperationRo_page_def" />
+      <integer name="PageOperationRo_pageSize_def" />
+      <integer name="PageOperationRo_start_def" />
+      <integer name="PageOperationRo_totalSize_def" />
+      <object name="PageOperationRo">
+        <property name="data" typeRef="PageOperationRo_data_def" />
+        <property name="end" type="integer" />
+        <property name="page" type="integer" />
+        <property name="pageSize" type="integer" />
+        <property name="start" type="integer" />
+        <property name="totalSize" type="integer" />
+      </object>
+      <string name="MessageAndMeasurementsRo_body_def" />
+      <dateTimeString name="MessageAndMeasurementsRo_creationDate_def" />
+      <string name="MessageAndMeasurementsRo_errorMessage_def" />
+      <string name="MessageAndMeasurementsRo_id_def" />
+      <number name="MessageAndMeasurementsRo_latitude_def" />
+      <number name="MessageAndMeasurementsRo_longitude_def" />
+      <object name="MessageAndMeasurementsRo_measurements_def" />
+      <string name="MessageAndMeasurementsRo_metadata_def" />
+      <integer name="MessageAndMeasurementsRo_number_def" />
+      <string name="MessageAndMeasurementsRo_processed_def" />
+      <dateTimeString name="MessageAndMeasurementsRo_timestamp_def" />
+      <string name="MessageAndMeasurementsRo_topic_def" />
+      <object name="MessageAndMeasurementsRo">
+        <property name="body" type="string" />
+        <property name="creationDate" typeRef="MessageAndMeasurementsRo_creationDate_def" />
+        <property name="errorMessage" type="string" />
+        <property name="id" type="string" />
+        <property name="latitude" type="number" />
+        <property name="link" typeRef="URI" />
+        <property name="longitude" type="number" />
+        <property name="measurements" typeRef="MessageAndMeasurementsRo_measurements_def" />
+        <property name="metadata" type="string" />
+        <property name="number" type="integer" />
+        <property name="processed" type="string" />
+        <property name="rawMeasurements" typeRef="JsonNode" />
+        <property name="thing" typeRef="ThingTinyRo" />
+        <property name="timestamp" typeRef="MessageAndMeasurementsRo_timestamp_def" />
+        <property name="topic" type="string" />
+      </object>
+      <string name="CustomModelTinyRo_color_def" />
+      <string name="CustomModelTinyRo_icon_def" />
+      <string name="CustomModelTinyRo_id_def" />
+      <string name="CustomModelTinyRo_link_def" />
+      <string name="CustomModelTinyRo_name_def" />
+      <object name="CustomModelTinyRo">
+        <property name="color" type="string" />
+        <property name="icon" type="string" />
+        <property name="id" type="string" />
+        <property name="link" type="string" />
+        <property name="name" type="string" />
+      </object>
+      <string name="ModelTinyRo_color_def" />
+      <boolean name="ModelTinyRo_generateLinks_def" />
+      <string name="ModelTinyRo_icon_def" />
+      <string name="ModelTinyRo_id_def" />
+      <boolean name="ModelTinyRo_isCustomModel_def" />
+      <string name="ModelTinyRo_name_def" />
+      <object name="ModelTinyRo">
+        <property name="color" type="string" />
+        <property name="generateLinks" type="boolean" />
+        <property name="icon" type="string" />
+        <property name="id" type="string" />
+        <property name="isCustomModel" type="boolean" />
+        <property name="link" typeRef="URI" />
+        <property name="name" type="string" />
+      </object>
+      <string name="MeasureTinyRo_dtype_def" />
+      <string name="MeasureTinyRo_id_def" />
+      <integer name="MeasureTinyRo_timestamp_def" />
+      <string name="MeasureTinyRo_value_def" />
+      <object name="MeasureTinyRo">
+        <property name="attribute" typeRef="AttributeTinyRo" />
+        <property name="dtype" type="string" />
+        <property name="id" type="string" />
+        <property name="timestamp" type="integer" />
+        <property name="value" type="string" />
+      </object>
+      <boolean name="ObjectNode_array_def" />
+      <boolean name="ObjectNode_bigDecimal_def" />
+      <boolean name="ObjectNode_bigInteger_def" />
+      <boolean name="ObjectNode_binary_def" />
+      <boolean name="ObjectNode_boolean_def" />
+      <boolean name="ObjectNode_containerNode_def" />
+      <boolean name="ObjectNode_double_def" />
+      <boolean name="ObjectNode_float_def" />
+      <boolean name="ObjectNode_floatingPointNumber_def" />
+      <boolean name="ObjectNode_int_def" />
+      <boolean name="ObjectNode_integralNumber_def" />
+      <boolean name="ObjectNode_long_def" />
+      <boolean name="ObjectNode_missingNode_def" />
+      <string name="ObjectNode_nodeType_def" />
+      <boolean name="ObjectNode_null_def" />
+      <boolean name="ObjectNode_number_def" />
+      <boolean name="ObjectNode_object_def" />
+      <boolean name="ObjectNode_pojo_def" />
+      <boolean name="ObjectNode_short_def" />
+      <boolean name="ObjectNode_textual_def" />
+      <boolean name="ObjectNode_valueNode_def" />
+      <object name="ObjectNode">
+        <property name="array" type="boolean" />
+        <property name="bigDecimal" type="boolean" />
+        <property name="bigInteger" type="boolean" />
+        <property name="binary" type="boolean" />
+        <property name="boolean" type="boolean" />
+        <property name="containerNode" type="boolean" />
+        <property name="double" type="boolean" />
+        <property name="float" type="boolean" />
+        <property name="floatingPointNumber" type="boolean" />
+        <property name="int" type="boolean" />
+        <property name="integralNumber" type="boolean" />
+        <property name="long" type="boolean" />
+        <property name="missingNode" type="boolean" />
+        <property name="nodeType" type="string" />
+        <property name="null" type="boolean" />
+        <property name="number" type="boolean" />
+        <property name="object" type="boolean" />
+        <property name="pojo" type="boolean" />
+        <property name="short" type="boolean" />
+        <property name="textual" type="boolean" />
+        <property name="valueNode" type="boolean" />
+      </object>
+      <string name="AttributeTinyRo_id_def" />
+      <string name="AttributeTinyRo_name_def" />
+      <string name="AttributeTinyRo_unit_def" />
+      <object name="AttributeTinyRo">
+        <property name="id" type="string" />
+        <property name="name" type="string" />
+        <property name="type" typeRef="QuantityKindRo" />
+        <property name="unit" type="string" />
+      </object>
+      <string name="CustomFieldRo_id_def" />
+      <string name="CustomFieldRo_imageLink_def" />
+      <string name="CustomFieldRo_label_def" />
+      <string name="CustomFieldRo_name_def" />
+      <string name="CustomFieldRo_type_def" />
+      <string name="CustomFieldRo_value_def" />
+      <object name="CustomFieldRo">
+        <property name="id" type="string" />
+        <property name="imageLink" type="string" />
+        <property name="label" type="string" />
+        <property name="name" type="string" />
+        <property name="type" type="string" />
+        <property name="value" type="string" />
+      </object>
+      <array typeRef="MessageRo" name="PageMessageRo_data_def" />
+      <integer name="PageMessageRo_end_def" />
+      <integer name="PageMessageRo_page_def" />
+      <integer name="PageMessageRo_pageSize_def" />
+      <integer name="PageMessageRo_start_def" />
+      <integer name="PageMessageRo_totalSize_def" />
+      <object name="PageMessageRo">
+        <property name="data" typeRef="PageMessageRo_data_def" />
+        <property name="end" type="integer" />
+        <property name="page" type="integer" />
+        <property name="pageSize" type="integer" />
+        <property name="start" type="integer" />
+        <property name="totalSize" type="integer" />
+      </object>
+      <boolean name="ManufacturerTinyRo_generateLinks_def" />
+      <string name="ManufacturerTinyRo_id_def" />
+      <string name="ManufacturerTinyRo_link_def" />
+      <string name="ManufacturerTinyRo_name_def" />
+      <object name="ManufacturerTinyRo">
+        <property name="generateLinks" type="boolean" />
+        <property name="id" type="string" />
+        <property name="link" type="string" />
+        <property name="name" type="string" />
+      </object>
+      <string name="ProductTinyRo_connectivityTypes_def_items_def" />
+      <array type="string" name="ProductTinyRo_connectivityTypes_def" />
+      <boolean name="ProductTinyRo_generateLinks_def" />
+      <string name="ProductTinyRo_id_def" />
+      <string name="ProductTinyRo_link_def" />
+      <string name="ProductTinyRo_name_def" />
+      <string name="ProductTinyRo_reference_def" />
+      <object name="ProductTinyRo">
+        <property name="connectivityTypes" typeRef="ProductTinyRo_connectivityTypes_def" />
+        <property name="generateLinks" type="boolean" />
+        <property name="id" type="string" />
+        <property name="link" type="string" />
+        <property name="manufacturer" typeRef="ManufacturerTinyRo" />
+        <property name="model" typeRef="ModelTinyRo" />
+        <property name="name" type="string" />
+        <property name="reference" type="string" />
+      </object>
+      <string name="ThingTinyRo_displayName_def" />
+      <string name="ThingTinyRo_fixedName_def" />
+      <string name="ThingTinyRo_id_def" />
+      <string name="ThingTinyRo_name_def" />
+      <integer name="ThingTinyRo_nbAlerts_def" />
+      <array typeRef="ThingTagRo" name="ThingTinyRo_tags_def" />
+      <object name="ThingTinyRo">
+        <property name="displayName" type="string" />
+        <property name="fixedName" type="string" />
+        <property name="id" type="string" />
+        <property name="name" type="string" />
+        <property name="nbAlerts" type="integer" />
+        <property name="tags" typeRef="ThingTinyRo_tags_def" />
+      </object>
+      <object name="ResponseEntity_body_def" />
+      <string name="ResponseEntity_statusCode_def" />
+      <integer name="ResponseEntity_statusCodeValue_def" />
+      <object name="ResponseEntity">
+        <property name="body" typeRef="ResponseEntity_body_def" />
+        <property name="statusCode" type="string" />
+        <property name="statusCodeValue" type="integer" />
+      </object>
+      <array typeRef="PageFlowRo" name="PageFlowRo_data_def" />
+      <integer name="PageFlowRo_end_def" />
+      <integer name="PageFlowRo_page_def" />
+      <integer name="PageFlowRo_pageSize_def" />
+      <integer name="PageFlowRo_start_def" />
+      <integer name="PageFlowRo_totalSize_def" />
+      <object name="PageFlowRo">
+        <property name="data" typeRef="PageFlowRo_data_def" />
+        <property name="end" type="integer" />
+        <property name="page" type="integer" />
+        <property name="pageSize" type="integer" />
+        <property name="start" type="integer" />
+        <property name="totalSize" type="integer" />
+      </object>
+      <array typeRef="SingleThingRo" name="PageSingleThingRo_data_def" />
+      <integer name="PageSingleThingRo_end_def" />
+      <integer name="PageSingleThingRo_page_def" />
+      <integer name="PageSingleThingRo_pageSize_def" />
+      <integer name="PageSingleThingRo_start_def" />
+      <integer name="PageSingleThingRo_totalSize_def" />
+      <object name="PageSingleThingRo">
+        <property name="data" typeRef="PageSingleThingRo_data_def" />
+        <property name="end" type="integer" />
+        <property name="page" type="integer" />
+        <property name="pageSize" type="integer" />
+        <property name="start" type="integer" />
+        <property name="totalSize" type="integer" />
+      </object>
+      <string name="ThingTagRo_id_def" />
+      <string name="ThingTagRo_tag_def" />
+      <object name="ThingTagRo">
+        <property name="id" type="string" />
+        <property name="tag" type="string" />
+      </object>
+      <string name="ApplicationTinyRo_id_def" />
+      <string name="ApplicationTinyRo_link_def" />
+      <string name="ApplicationTinyRo_name_def" />
+      <object name="ApplicationTinyRo">
+        <property name="id" type="string" />
+        <property name="link" type="string" />
+        <property name="name" type="string" />
+      </object>
+      <array typeRef="AttributeRo" name="ModelRo_attributes_def" />
+      <string name="ModelRo_color_def" />
+      <string name="ModelRo_icon_def" />
+      <string name="ModelRo_id_def" />
+      <boolean name="ModelRo_isCustomModel_def" />
+      <string name="ModelRo_name_def" />
+      <array typeRef="OperationRo" name="ModelRo_operations_def" />
+      <object name="ModelRo">
+        <property name="attributes" typeRef="ModelRo_attributes_def" />
+        <property name="color" type="string" />
+        <property name="icon" type="string" />
+        <property name="id" type="string" />
+        <property name="isCustomModel" type="boolean" />
+        <property name="link" typeRef="URI" />
+        <property name="name" type="string" />
+        <property name="operations" typeRef="ModelRo_operations_def" />
+      </object>
+      <string name="updateAlertState_param_paramJson_def" />
+      <array typeRef="SiteRo" name="createSite_responses_200_def" />
+      <array typeRef="SingleThingRo" name="associateThingsWithProduct_responses_200_def" />
+      <string name="getThingList_param_thingIds_def_items_def" />
+      <array type="string" name="getThingList_param_thingIds_def" />
+      <array typeRef="SingleThingRo" name="getThingList_responses_200_def" />
+      <array typeRef="MeasureTinyRo" name="getLastMeasures_responses_200_def" />
+      <array typeRef="StatsGraphRo" name="getStatsMeasurements_responses_200_def" />
+      <array typeRef="StatsCountRo" name="getStatsRepartition_responses_200_def" />
+      <array typeRef="StatsGraphRo" name="getStatsSum_responses_200_def" />
+    </jsonTypes>
+  </grammars>
+  <resources siena:authenticationProviderHref="#PowerAppAuth" base="https://europe-002.azure-apim.net/apim/pilotthings">
+    <resource path="/{connectionId}/api/alerts">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <method siena:requiresAuthentication="true" name="GET" id="getAlerts" siena:isDeprecated="false">
+        <doc title="Get a list of alerts&#xA;Get a list of alerts" />
+        <request>
+          <param style="query" name="page" type="xs:int">
+            <doc title="Number of the current page" />
+          </param>
+          <param style="query" name="pageSize" type="xs:int">
+            <doc title="Number of item in the page" />
+          </param>
+          <param style="query" name="sortValues" type="xs:string">
+            <doc title="String for sort value" />
+          </param>
+          <param style="query" name="sort" type="xs:string">
+            <doc title="String for sort value" />
+          </param>
+          <param style="query" name="filter" type="xs:string">
+            <doc title="String for filter" />
+          </param>
+          <param style="query" name="dir" type="xs:string">
+            <doc title="Sort direction (ASC/DESC)" />
+            <option value="ASC" />
+            <option value="DESC" />
+          </param>
+          <param style="query" name="orFilter" type="xs:string">
+            <doc title="Or filter parameter" />
+          </param>
+          <param style="query" name="dateStart" type="xs:long" default="0">
+            <doc title="Timestamp with date start" />
+          </param>
+          <param style="query" name="dateEnd" type="xs:long" default="0">
+            <doc title="Timestamp with date end" />
+          </param>
+        </request>
+        <response>
+          <representation mediaType="application/json" element="service:PageAlertRo" />
+        </response>
+      </method>
+    </resource>
+    <resource path="/{connectionId}/api/alerts/{id}">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <param style="template" name="id" type="xs:string" required="true">
+        <doc title="Id of an alert. Cannot be empty." />
+      </param>
+      <method siena:requiresAuthentication="true" name="PUT" id="updateAlertState" siena:isDeprecated="false">
+        <doc title="Update alert state&#xA;Update alert state" />
+        <request>
+          <representation mediaType="application/json">
+            <param style="plain" name="paramJson" path="" type="xs:string" required="true">
+              <doc title="Value of state. Cannot be empty." />
+            </param>
+          </representation>
+        </request>
+        <response>
+          <representation mediaType="application/json" element="service:AlertRo" />
+        </response>
+      </method>
+    </resource>
+    <resource path="/{connectionId}/api/measures">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <method siena:requiresAuthentication="true" name="GET" id="getMeasures" siena:isDeprecated="false">
+        <doc title="Get a list of measures&#xA;Get a list of measures" />
+        <request>
+          <param style="query" name="detailed" type="xs:boolean" default="false">
+            <doc title="Boolean for detailed information" />
+          </param>
+          <param style="query" name="page" type="xs:int">
+            <doc title="Number of the current page" />
+          </param>
+          <param style="query" name="pageSize" type="xs:int">
+            <doc title="Number of item in the page" />
+          </param>
+          <param style="query" name="sortValues" type="xs:string">
+            <doc title="String for sort value" />
+          </param>
+          <param style="query" name="sort" type="xs:string">
+            <doc title="String for sort value" />
+          </param>
+          <param style="query" name="filter" type="xs:string">
+            <doc title="String for filter" />
+          </param>
+          <param style="query" name="dir" type="xs:string">
+            <doc title="Sort direction (ASC/DESC)" />
+            <option value="ASC" />
+            <option value="DESC" />
+          </param>
+          <param style="query" name="orFilter" type="xs:string">
+            <doc title="Or filter parameter" />
+          </param>
+        </request>
+        <response>
+          <representation mediaType="application/json" element="service:PageMeasureRo" />
+        </response>
+      </method>
+    </resource>
+    <resource path="/{connectionId}/api/measures/count">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <method siena:requiresAuthentication="true" name="GET" id="getCount" siena:isDeprecated="false">
+        <doc title="Get measures count&#xA;Get measures count" />
+        <request>
+          <param style="query" name="page" type="xs:int">
+            <doc title="Number of the current page" />
+          </param>
+          <param style="query" name="pageSize" type="xs:int">
+            <doc title="Number of item in the page" />
+          </param>
+          <param style="query" name="sortValues" type="xs:string">
+            <doc title="String for sort value" />
+          </param>
+          <param style="query" name="sort" type="xs:string">
+            <doc title="String for sort value" />
+          </param>
+          <param style="query" name="filter" type="xs:string">
+            <doc title="String for filter" />
+          </param>
+          <param style="query" name="dir" type="xs:string">
+            <doc title="Sort direction (ASC/DESC)" />
+            <option value="ASC" />
+            <option value="DESC" />
+          </param>
+          <param style="query" name="orFilter" type="xs:string">
+            <doc title="Or filter parameter" />
+          </param>
+        </request>
+        <response>
+          <representation mediaType="application/json" element="service:CountRo" />
+        </response>
+      </method>
+    </resource>
+    <resource path="/{connectionId}/api/measures/{id}">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <param style="template" name="id" type="xs:string" required="true">
+        <doc title="Id of a measure. Cannot be empty." />
+      </param>
+      <method siena:requiresAuthentication="true" name="GET" id="getMeasure" siena:isDeprecated="false">
+        <doc title="Get a measure&#xA;Get a measure" />
+        <request>
+          <param style="query" name="detailed" type="xs:boolean" default="false">
+            <doc title="Boolean for detailed information" />
+          </param>
+        </request>
+        <response>
+          <representation mediaType="application/json" element="service:MeasureRo" />
+        </response>
+      </method>
+    </resource>
+    <resource path="/{connectionId}/api/messages">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <method siena:requiresAuthentication="true" name="GET" id="getMessages" siena:isDeprecated="false">
+        <doc title="Get a list of messages&#xA;Get a list of messages" />
+        <request>
+          <param style="query" name="page" type="xs:int">
+            <doc title="Number of the current page" />
+          </param>
+          <param style="query" name="pageSize" type="xs:int">
+            <doc title="Number of item in the page" />
+          </param>
+          <param style="query" name="sortValues" type="xs:string">
+            <doc title="String for sort value" />
+          </param>
+          <param style="query" name="sort" type="xs:string">
+            <doc title="String for sort value" />
+          </param>
+          <param style="query" name="filter" type="xs:string">
+            <doc title="String for filter" />
+          </param>
+          <param style="query" name="dir" type="xs:string">
+            <doc title="Sort direction (ASC/DESC)" />
+            <option value="ASC" />
+            <option value="DESC" />
+          </param>
+          <param style="query" name="orFilter" type="xs:string">
+            <doc title="Or filter parameter" />
+          </param>
+        </request>
+        <response>
+          <representation mediaType="application/json" element="service:PageMessageRo" />
+        </response>
+      </method>
+    </resource>
+    <resource path="/{connectionId}/api/messages/things/{thingId}">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <param style="template" name="thingId" type="xs:string" required="true">
+        <doc title="Id of a thing. Cannot be empty." />
+      </param>
+      <method siena:requiresAuthentication="true" name="GET" id="getMessagesAndMeasurements" siena:isDeprecated="false">
+        <doc title="Get message list for a thing&#xA;Get message list for a thing" />
+        <request>
+          <param style="query" name="page" type="xs:int">
+            <doc title="Number of the current page" />
+          </param>
+          <param style="query" name="pageSize" type="xs:int">
+            <doc title="Number of item in the page" />
+          </param>
+          <param style="query" name="sortValues" type="xs:string">
+            <doc title="String for sort value" />
+          </param>
+          <param style="query" name="sort" type="xs:string">
+            <doc title="String for sort value" />
+          </param>
+          <param style="query" name="filter" type="xs:string">
+            <doc title="String for filter" />
+          </param>
+          <param style="query" name="dir" type="xs:string">
+            <doc title="Sort direction (ASC/DESC)" />
+            <option value="ASC" />
+            <option value="DESC" />
+          </param>
+          <param style="query" name="orFilter" type="xs:string">
+            <doc title="Or filter parameter" />
+          </param>
+        </request>
+        <response>
+          <representation mediaType="application/json" element="service:PageMessageRo" />
+        </response>
+      </method>
+    </resource>
+    <resource path="/{connectionId}/api/messages/things/{thingId}">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <param style="template" name="thingId" type="xs:string" required="true">
+        <doc title="Id of a thing. Cannot be empty." />
+      </param>
+      <method siena:requiresAuthentication="true" name="POST" id="addMessage" siena:isDeprecated="false">
+        <doc title="Add a message&#xA;Add a message" />
+        <request>
+          <representation mediaType="application/json">
+            <param style="plain" name="body" path="/body" type="xs:string" required="true" />
+            <param style="plain" name="creationDate" path="/creationDate" type="service:MessageAndMeasurementsRo_creationDate_def" required="true" />
+            <param style="plain" name="errorMessage" path="/errorMessage" type="xs:string" required="true" />
+            <param style="plain" name="id" path="/id" type="xs:string" />
+            <param style="plain" name="latitude" path="/latitude" type="xs:double" required="true" />
+            <param style="plain" name="link" path="/link" type="service:URI" />
+            <param style="plain" name="longitude" path="/longitude" type="xs:double" required="true" />
+            <param style="plain" name="measurements" path="/measurements" type="service:MessageAndMeasurementsRo_measurements_def" />
+            <param style="plain" name="metadata" path="/metadata" type="xs:string" required="true" />
+            <param style="plain" name="number" path="/number" type="xs:long" required="true" />
+            <param style="plain" name="processed" path="/processed" type="xs:string" required="true">
+              <option value="TODO" />
+              <option value="DONE" />
+              <option value="IN_PROGRESS" />
+              <option value="ASSOCIATED" />
+              <option value="TO_BE_FORWARDED" />
+              <option value="ERROR_CUSTOM" />
+              <option value="TODO_CUSTOM" />
+              <option value="ERROR" />
+            </param>
+            <param style="plain" name="rawMeasurements" path="/rawMeasurements" type="service:JsonNode" />
+            <param style="plain" name="thing" path="/thing" type="service:ThingTinyRo" required="true" />
+            <param style="plain" name="timestamp" path="/timestamp" type="service:MessageAndMeasurementsRo_timestamp_def" required="true" />
+            <param style="plain" name="topic" path="/topic" type="xs:string" required="true" />
+          </representation>
+        </request>
+        <response>
+          <representation mediaType="application/json" element="service:MessageRo" />
+        </response>
+      </method>
+    </resource>
+    <resource path="/{connectionId}/api/messages/{id}">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <param style="template" name="id" type="xs:string" required="true">
+        <doc title="Id of a message. Cannot be empty." />
+      </param>
+      <method siena:requiresAuthentication="true" name="GET" id="getMessage" siena:isDeprecated="false">
+        <doc title="Get a message&#xA;Get a message" />
+        <request />
+        <response>
+          <representation mediaType="application/json" element="service:MessageRo" />
+        </response>
+      </method>
+    </resource>
+    <resource path="/{connectionId}/api/messages/{id}/previous">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <param style="template" name="id" type="xs:string" required="true">
+        <doc title="Id of a message. Cannot be empty." />
+      </param>
+      <method siena:requiresAuthentication="true" name="GET" id="getPreviousMessage" siena:isDeprecated="false">
+        <doc title="Get previous message&#xA;Get previous message" />
+        <request />
+        <response>
+          <representation mediaType="application/json" element="service:MessageRo" />
+        </response>
+      </method>
+    </resource>
+    <resource path="/{connectionId}/api/sites">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <method siena:requiresAuthentication="true" name="GET" id="getSites" siena:isDeprecated="false">
+        <doc title="Get all site&#xA;Get previous message" />
+        <request>
+          <param style="query" name="page" type="xs:int">
+            <doc title="Number of the current page" />
+          </param>
+          <param style="query" name="pageSize" type="xs:int">
+            <doc title="Number of item in the page" />
+          </param>
+          <param style="query" name="sortValues" type="xs:string">
+            <doc title="String for sort value" />
+          </param>
+          <param style="query" name="sort" type="xs:string">
+            <doc title="String for sort value" />
+          </param>
+          <param style="query" name="filter" type="xs:string">
+            <doc title="String for filter" />
+          </param>
+          <param style="query" name="dir" type="xs:string">
+            <doc title="Sort direction (ASC/DESC)" />
+            <option value="ASC" />
+            <option value="DESC" />
+          </param>
+          <param style="query" name="orFilter" type="xs:string">
+            <doc title="Or filter parameter" />
+          </param>
+        </request>
+        <response>
+          <representation mediaType="application/json" element="service:PageSiteRo" />
+        </response>
+      </method>
+    </resource>
+    <resource path="/{connectionId}/api/sites">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <method siena:requiresAuthentication="true" name="POST" id="createSite" siena:isDeprecated="false">
+        <doc title="Create new site&#xA;Create new site" />
+        <request>
+          <representation mediaType="application/json">
+            <param style="plain" name="array" path="/array" type="xs:boolean" />
+            <param style="plain" name="bigDecimal" path="/bigDecimal" type="xs:boolean" />
+            <param style="plain" name="bigInteger" path="/bigInteger" type="xs:boolean" />
+            <param style="plain" name="binary" path="/binary" type="xs:boolean" />
+            <param style="plain" name="boolean" path="/boolean" type="xs:boolean" />
+            <param style="plain" name="containerNode" path="/containerNode" type="xs:boolean" />
+            <param style="plain" name="double" path="/double" type="xs:boolean" />
+            <param style="plain" name="float" path="/float" type="xs:boolean" />
+            <param style="plain" name="floatingPointNumber" path="/floatingPointNumber" type="xs:boolean" />
+            <param style="plain" name="int" path="/int" type="xs:boolean" />
+            <param style="plain" name="integralNumber" path="/integralNumber" type="xs:boolean" />
+            <param style="plain" name="long" path="/long" type="xs:boolean" />
+            <param style="plain" name="missingNode" path="/missingNode" type="xs:boolean" />
+            <param style="plain" name="nodeType" path="/nodeType" type="xs:string">
+              <option value="ARRAY" />
+              <option value="BINARY" />
+              <option value="BOOLEAN" />
+              <option value="MISSING" />
+              <option value="NULL" />
+              <option value="NUMBER" />
+              <option value="OBJECT" />
+              <option value="POJO" />
+              <option value="STRING" />
+            </param>
+            <param style="plain" name="null" path="/null" type="xs:boolean" />
+            <param style="plain" name="number" path="/number" type="xs:boolean" />
+            <param style="plain" name="object" path="/object" type="xs:boolean" />
+            <param style="plain" name="pojo" path="/pojo" type="xs:boolean" />
+            <param style="plain" name="short" path="/short" type="xs:boolean" />
+            <param style="plain" name="textual" path="/textual" type="xs:boolean" />
+            <param style="plain" name="valueNode" path="/valueNode" type="xs:boolean" />
+          </representation>
+        </request>
+        <response>
+          <representation mediaType="application/json" element="service:createSite_responses_200_def" />
+        </response>
+      </method>
+    </resource>
+    <resource path="/{connectionId}/api/sites/{id}">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <param style="template" name="id" type="xs:string" required="true">
+        <doc title="Id of a site. Cannot be empty." />
+      </param>
+      <method siena:requiresAuthentication="true" name="GET" id="getSite" siena:isDeprecated="false">
+        <doc title="Get a site&#xA;Get a site" />
+        <request />
+        <response>
+          <representation mediaType="application/json" element="service:SiteRo" />
+        </response>
+      </method>
+    </resource>
+    <resource path="/{connectionId}/api/sites/{id}">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <param style="template" name="id" type="xs:string" required="true">
+        <doc title="Id of a site. Cannot be empty." />
+      </param>
+      <method siena:requiresAuthentication="true" name="DELETE" id="deleteSite" siena:isDeprecated="false">
+        <doc title="Delete a site&#xA;Delete a site" />
+        <request />
+      </method>
+    </resource>
+    <resource path="/{connectionId}/api/sites/{id}">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <param style="template" name="id" type="xs:string" required="true">
+        <doc title="Id of a site. Cannot be empty." />
+      </param>
+      <method siena:requiresAuthentication="true" name="PUT" id="updateSite" siena:isDeprecated="false">
+        <doc title="Update a site&#xA;Update a site" />
+        <request>
+          <representation mediaType="application/json">
+            <param style="plain" name="address" path="/address" type="xs:string" required="true" />
+            <param style="plain" name="city" path="/city" type="xs:string" required="true" />
+            <param style="plain" name="id" path="/id" type="xs:string" />
+            <param style="plain" name="latitude" path="/latitude" type="xs:double" />
+            <param style="plain" name="longitude" path="/longitude" type="xs:double" />
+            <param style="plain" name="name" path="/name" type="xs:string" required="true" />
+            <param style="plain" name="postalCode" path="/postalCode" type="xs:string" required="true" />
+          </representation>
+        </request>
+        <response>
+          <representation mediaType="application/json" element="service:SiteRo" />
+        </response>
+      </method>
+    </resource>
+    <resource path="/{connectionId}/api/tags">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <method siena:requiresAuthentication="true" name="GET" id="getTags" siena:isDeprecated="false">
+        <doc title="Get the list of tags&#xA;Get the list of tags" />
+        <request>
+          <param style="query" name="page" type="xs:int">
+            <doc title="Number of the current page" />
+          </param>
+          <param style="query" name="pageSize" type="xs:int">
+            <doc title="Number of item in the page" />
+          </param>
+          <param style="query" name="sortValues" type="xs:string">
+            <doc title="String for sort value" />
+          </param>
+          <param style="query" name="sort" type="xs:string">
+            <doc title="String for sort value" />
+          </param>
+          <param style="query" name="filter" type="xs:string">
+            <doc title="String for filter" />
+          </param>
+          <param style="query" name="dir" type="xs:string">
+            <doc title="Sort direction (ASC/DESC)" />
+            <option value="ASC" />
+            <option value="DESC" />
+          </param>
+          <param style="query" name="orFilter" type="xs:string">
+            <doc title="Or filter parameter" />
+          </param>
+        </request>
+        <response>
+          <representation mediaType="application/json" element="service:PageThingTagRo" />
+        </response>
+      </method>
+    </resource>
+    <resource path="/{connectionId}/api/tags">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <method siena:requiresAuthentication="true" name="PUT" id="updateThingTag" siena:isDeprecated="false">
+        <doc title="Update a tag of thing&#xA;Update a tag of thing" />
+        <request>
+          <representation mediaType="application/json">
+            <param style="plain" name="id" path="/id" type="xs:string" />
+            <param style="plain" name="tag" path="/tag" type="xs:string" />
+          </representation>
+        </request>
+        <response>
+          <representation mediaType="application/json" element="service:TagRo" />
+        </response>
+      </method>
+    </resource>
+    <resource path="/{connectionId}/api/tags/thing/{thingId}">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <param style="template" name="thingId" type="xs:string" required="true">
+        <doc title="Id of a thing. Cannot be empty." />
+      </param>
+      <method siena:requiresAuthentication="true" name="POST" id="addThingTag" siena:isDeprecated="false">
+        <doc title="Add a tag to thing&#xA;Add a tag to thing" />
+        <request>
+          <representation mediaType="application/json">
+            <param style="plain" name="id" path="/id" type="xs:string" />
+            <param style="plain" name="tag" path="/tag" type="xs:string" />
+          </representation>
+        </request>
+        <response>
+          <representation mediaType="application/json" element="service:TagRo" />
+        </response>
+      </method>
+    </resource>
+    <resource path="/{connectionId}/api/tags/{id}">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <param style="template" name="id" type="xs:string" required="true">
+        <doc title="Id of a tag. Cannot be empty." />
+      </param>
+      <method siena:requiresAuthentication="true" name="GET" id="getThingTag" siena:isDeprecated="false">
+        <doc title="Get a tag&#xA;Get a tag" />
+        <request />
+        <response>
+          <representation mediaType="application/json" element="service:TagRo" />
+        </response>
+      </method>
+    </resource>
+    <resource path="/{connectionId}/api/things">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <method siena:requiresAuthentication="true" name="GET" id="getThings" siena:isDeprecated="false">
+        <doc title="Get a list of things&#xA;Get a list of things" />
+        <request>
+          <param style="query" name="page" type="xs:int">
+            <doc title="Number of the current page" />
+          </param>
+          <param style="query" name="pageSize" type="xs:int">
+            <doc title="Number of item in the page" />
+          </param>
+          <param style="query" name="sortValues" type="xs:string">
+            <doc title="String for sort value" />
+          </param>
+          <param style="query" name="sort" type="xs:string">
+            <doc title="String for sort value" />
+          </param>
+          <param style="query" name="filter" type="xs:string">
+            <doc title="String for filter" />
+          </param>
+          <param style="query" name="dir" type="xs:string">
+            <doc title="Sort direction (ASC/DESC)" />
+            <option value="ASC" />
+            <option value="DESC" />
+          </param>
+          <param style="query" name="orFilter" type="xs:string">
+            <doc title="Or filter parameter" />
+          </param>
+          <param style="query" name="detailed" type="xs:boolean" default="false">
+            <doc title="Boolean for detailed information." />
+          </param>
+        </request>
+        <response>
+          <representation mediaType="application/json" element="service:PageSingleThingRo" />
+        </response>
+      </method>
+    </resource>
+    <resource path="/{connectionId}/api/things">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <method siena:requiresAuthentication="true" name="POST" id="addThingsCsv" siena:isDeprecated="false">
+        <doc title="Import a csv file&#xA;Import a csv file" />
+        <request>
+          <representation mediaType="multipart/form-data">
+            <param style="query" name="file" type="xs:base64Binary" required="true">
+              <doc title="file" />
+            </param>
+          </representation>
+        </request>
+        <response>
+          <representation mediaType="application/json" element="service:ResponseEntity" />
+        </response>
+      </method>
+    </resource>
+    <resource path="/{connectionId}/api/things">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <method siena:requiresAuthentication="true" name="PUT" id="associateThingsWithProduct" siena:isDeprecated="false">
+        <doc title="Associate a product to a list of things&#xA;Associate a product to a list of things" />
+        <request>
+          <representation mediaType="application/json">
+            <param style="plain" name="array" path="/array" type="xs:boolean" />
+            <param style="plain" name="bigDecimal" path="/bigDecimal" type="xs:boolean" />
+            <param style="plain" name="bigInteger" path="/bigInteger" type="xs:boolean" />
+            <param style="plain" name="binary" path="/binary" type="xs:boolean" />
+            <param style="plain" name="boolean" path="/boolean" type="xs:boolean" />
+            <param style="plain" name="containerNode" path="/containerNode" type="xs:boolean" />
+            <param style="plain" name="double" path="/double" type="xs:boolean" />
+            <param style="plain" name="float" path="/float" type="xs:boolean" />
+            <param style="plain" name="floatingPointNumber" path="/floatingPointNumber" type="xs:boolean" />
+            <param style="plain" name="int" path="/int" type="xs:boolean" />
+            <param style="plain" name="integralNumber" path="/integralNumber" type="xs:boolean" />
+            <param style="plain" name="long" path="/long" type="xs:boolean" />
+            <param style="plain" name="missingNode" path="/missingNode" type="xs:boolean" />
+            <param style="plain" name="nodeType" path="/nodeType" type="xs:string">
+              <option value="ARRAY" />
+              <option value="BINARY" />
+              <option value="BOOLEAN" />
+              <option value="MISSING" />
+              <option value="NULL" />
+              <option value="NUMBER" />
+              <option value="OBJECT" />
+              <option value="POJO" />
+              <option value="STRING" />
+            </param>
+            <param style="plain" name="null" path="/null" type="xs:boolean" />
+            <param style="plain" name="number" path="/number" type="xs:boolean" />
+            <param style="plain" name="object" path="/object" type="xs:boolean" />
+            <param style="plain" name="pojo" path="/pojo" type="xs:boolean" />
+            <param style="plain" name="short" path="/short" type="xs:boolean" />
+            <param style="plain" name="textual" path="/textual" type="xs:boolean" />
+            <param style="plain" name="valueNode" path="/valueNode" type="xs:boolean" />
+          </representation>
+        </request>
+        <response>
+          <representation mediaType="application/json" element="service:associateThingsWithProduct_responses_200_def" />
+        </response>
+      </method>
+    </resource>
+    <resource path="/{connectionId}/api/things/list">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <method siena:requiresAuthentication="true" name="POST" id="getThingList" siena:isDeprecated="false">
+        <doc title="Get the list of things&#xA;Get the list of things" />
+        <request>
+          <representation mediaType="application/json">
+            <param style="plain" name="thingIds" path="" type="service:getThingList_param_thingIds_def" required="true">
+              <doc title="thingIds" />
+            </param>
+          </representation>
+        </request>
+        <response>
+          <representation mediaType="application/json" element="service:getThingList_responses_200_def" />
+        </response>
+      </method>
+    </resource>
+    <resource path="/{connectionId}/api/things/{id}">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <param style="template" name="id" type="xs:string" required="true">
+        <doc title="Id of a thing. Cannot be empty." />
+      </param>
+      <method siena:requiresAuthentication="true" name="GET" id="getThing" siena:isDeprecated="false">
+        <doc title="Get a thing details&#xA;Get a thing details" />
+        <request>
+          <param style="query" name="detailed" type="xs:boolean" default="false">
+            <doc title="Boolean for detailed information." />
+          </param>
+        </request>
+        <response>
+          <representation mediaType="application/json" element="service:SingleThingRo" />
+        </response>
+      </method>
+    </resource>
+    <resource path="/{connectionId}/api/things/{id}">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <param style="template" name="id" type="xs:string" required="true">
+        <doc title="Id of a thing. Cannot be empty." />
+      </param>
+      <method siena:requiresAuthentication="true" name="DELETE" id="ignoreThing" siena:isDeprecated="false">
+        <doc title="Delete a thing&#xA;Delete a thing" />
+        <request>
+          <param style="query" name="force" type="xs:boolean">
+            <doc title="force" />
+          </param>
+        </request>
+      </method>
+    </resource>
+    <resource path="/{connectionId}/api/things/{id}">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <param style="template" name="id" type="xs:string" required="true">
+        <doc title="Id of a thing. Cannot be empty." />
+      </param>
+      <method siena:requiresAuthentication="true" name="PUT" id="putThing" siena:isDeprecated="false">
+        <doc title="Update a thing&#xA;Update a thing" />
+        <request>
+          <representation mediaType="application/json">
+            <param style="plain" name="application" path="/application" type="service:ApplicationTinyRo" required="true" />
+            <param style="plain" name="connectivity" path="/connectivity" type="service:ConnectivityRo" required="true" />
+            <param style="plain" name="customFields" path="/customFields" type="service:SingleThingRo_customFields_def" />
+            <param style="plain" name="customModel" path="/customModel" type="service:CustomModelTinyRo" />
+            <param style="plain" name="description" path="/description" type="xs:string" />
+            <param style="plain" name="device" path="/device" type="service:DeviceRo" required="true" />
+            <param style="plain" name="displayName" path="/displayName" type="xs:string" />
+            <param style="plain" name="dynamicGps" path="/dynamicGps" type="xs:boolean" />
+            <param style="plain" name="fixedLatitude" path="/fixedLatitude" type="xs:double" />
+            <param style="plain" name="fixedLongitude" path="/fixedLongitude" type="xs:double" />
+            <param style="plain" name="fixedName" path="/fixedName" type="xs:string" />
+            <param style="plain" name="id" path="/id" type="xs:string" />
+            <param style="plain" name="lastActivityDate" path="/lastActivityDate" type="xs:long" />
+            <param style="plain" name="lastLatitude" path="/lastLatitude" type="xs:double" />
+            <param style="plain" name="lastLongitude" path="/lastLongitude" type="xs:double" />
+            <param style="plain" name="lastMeasurements" path="/lastMeasurements" type="service:JsonNode" />
+            <param style="plain" name="lastMeasurementsTimestamps" path="/lastMeasurementsTimestamps" type="service:JsonNode" />
+            <param style="plain" name="lastMessageDate" path="/lastMessageDate" type="xs:long" />
+            <param style="plain" name="messageActivityTimeoutPeriod" path="/messageActivityTimeoutPeriod" type="xs:long" />
+            <param style="plain" name="name" path="/name" type="xs:string" required="true" />
+            <param style="plain" name="nbAlerts" path="/nbAlerts" type="xs:long" />
+            <param style="plain" name="product" path="/product" type="service:ProductTinyRo" />
+            <param style="plain" name="site" path="/site" type="service:SiteRo" />
+            <param style="plain" name="sourceId" path="/sourceId" type="xs:string" />
+            <param style="plain" name="status" path="/status" type="xs:string">
+              <option value="PROVISIONED" />
+              <option value="PENDING" />
+              <option value="INACTIVE" />
+              <option value="ACTIVE" />
+              <option value="WARNING" />
+              <option value="SUSPENDED" />
+              <option value="DELETED" />
+              <option value="IN_ASSOCIATION" />
+              <option value="IN_DISSOCIATION" />
+              <option value="OUT_OF_ORDER" />
+              <option value="CREATED" />
+              <option value="VIRTUAL" />
+            </param>
+            <param style="plain" name="tags" path="/tags" type="service:SingleThingRo_tags_def" />
+          </representation>
+        </request>
+        <response>
+          <representation mediaType="application/json" element="service:ThingRo" />
+        </response>
+      </method>
+    </resource>
+    <resource path="/{connectionId}/api/things/{id}/active_model">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <param style="template" name="id" type="xs:string" required="true">
+        <doc title="Id of a thing. Cannot be empty." />
+      </param>
+      <method siena:requiresAuthentication="true" name="GET" id="getThingActiveModel" siena:isDeprecated="false">
+        <doc title="Get the active model of a thing&#xA;Get the active model of a thing" />
+        <request />
+        <response>
+          <representation mediaType="application/json" element="service:ModelRo" />
+        </response>
+      </method>
+    </resource>
+    <resource path="/{connectionId}/api/things/{id}/custom_fields">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <param style="template" name="id" type="xs:string" required="true">
+        <doc title="Id of a thing. Cannot be empty." />
+      </param>
+      <method siena:requiresAuthentication="true" name="GET" id="getCustomField" siena:isDeprecated="false">
+        <doc title="Get custom fields list&#xA;Get custom fields list" />
+        <request />
+        <response>
+          <representation mediaType="application/json" element="service:PageCustomFieldRo" />
+        </response>
+      </method>
+    </resource>
+    <resource path="/{connectionId}/api/things/{id}/custom_fields">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <param style="template" name="id" type="xs:string" required="true">
+        <doc title="Id of a thing. Cannot be empty." />
+      </param>
+      <method siena:requiresAuthentication="true" name="POST" id="createCustomField" siena:isDeprecated="false">
+        <doc title="Add custom fields&#xA;Add custom fields" />
+        <request>
+          <representation mediaType="application/json">
+            <param style="plain" name="id" path="/id" type="xs:string" />
+            <param style="plain" name="imageLink" path="/imageLink" type="xs:string" />
+            <param style="plain" name="label" path="/label" type="xs:string" />
+            <param style="plain" name="name" path="/name" type="xs:string" />
+            <param style="plain" name="type" path="/type" type="xs:string">
+              <option value="TEXT" />
+              <option value="TEXTEREA" />
+              <option value="FILE" />
+            </param>
+            <param style="plain" name="value" path="/value" type="xs:string" />
+          </representation>
+        </request>
+        <response>
+          <representation mediaType="application/json" element="service:CustomFieldRo" />
+        </response>
+      </method>
+    </resource>
+    <resource path="/{connectionId}/api/things/{id}/custom_fields">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <param style="template" name="id" type="xs:string" required="true">
+        <doc title="Id of a thing. Cannot be empty." />
+      </param>
+      <method siena:requiresAuthentication="true" name="PUT" id="updateCustomField" siena:isDeprecated="false">
+        <doc title="Update custom fields&#xA;Update custom fields" />
+        <request>
+          <representation mediaType="application/json">
+            <param style="plain" name="id" path="/id" type="xs:string" />
+            <param style="plain" name="imageLink" path="/imageLink" type="xs:string" />
+            <param style="plain" name="label" path="/label" type="xs:string" />
+            <param style="plain" name="name" path="/name" type="xs:string" />
+            <param style="plain" name="type" path="/type" type="xs:string">
+              <option value="TEXT" />
+              <option value="TEXTEREA" />
+              <option value="FILE" />
+            </param>
+            <param style="plain" name="value" path="/value" type="xs:string" />
+          </representation>
+        </request>
+        <response>
+          <representation mediaType="application/json" element="service:CustomFieldRo" />
+        </response>
+      </method>
+    </resource>
+    <resource path="/{connectionId}/api/things/{id}/custom_fields/{fieldId}">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <param style="template" name="id" type="xs:string" required="true">
+        <doc title="Id of a thing. Cannot be empty." />
+      </param>
+      <param style="template" name="fieldId" type="xs:string" required="true">
+        <doc title="Id of a custom field. Cannot be empty." />
+      </param>
+      <method siena:requiresAuthentication="true" name="DELETE" id="deleteCustomField" siena:isDeprecated="false">
+        <doc title="Delete custom fields&#xA;Delete custom fields" />
+        <request />
+        <response>
+          <representation mediaType="application/json" element="service:ResponseEntity" />
+        </response>
+      </method>
+    </resource>
+    <resource path="/{connectionId}/api/things/{id}/custom_fields/{fieldId}/image">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <param style="template" name="id" type="xs:string" required="true">
+        <doc title="Id of a thing. Cannot be empty." />
+      </param>
+      <param style="template" name="fieldId" type="xs:string" required="true">
+        <doc title="Id of a custom field. Cannot be empty." />
+      </param>
+      <method siena:requiresAuthentication="true" name="GET" id="getCustomFieldImage" siena:isDeprecated="false">
+        <doc title="Get custom fields image&#xA;Get custom fields image" />
+        <request />
+        <response>
+          <representation mediaType="application/json" element="service:ResponseEntity" />
+        </response>
+      </method>
+    </resource>
+    <resource path="/{connectionId}/api/things/{id}/custom_fields/{fieldId}/image">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <param style="template" name="id" type="xs:string" required="true">
+        <doc title="Id of a thing. Cannot be empty." />
+      </param>
+      <param style="template" name="fieldId" type="xs:string" required="true">
+        <doc title="Id of a custom field. Cannot be empty." />
+      </param>
+      <method siena:requiresAuthentication="true" name="POST" id="postCustomFieldImage" siena:isDeprecated="false">
+        <doc title="Update custom fields image&#xA;Update custom fields image" />
+        <request>
+          <representation mediaType="multipart/form-data">
+            <param style="query" name="file" type="xs:base64Binary" required="true">
+              <doc title="Image" />
+            </param>
+          </representation>
+        </request>
+        <response>
+          <representation mediaType="application/json" element="service:ResponseEntity" />
+        </response>
+      </method>
+    </resource>
+    <resource path="/{connectionId}/api/things/{id}/image">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <param style="template" name="id" type="xs:string" required="true">
+        <doc title="Id of a thing. Cannot be empty." />
+      </param>
+      <method siena:requiresAuthentication="true" name="GET" id="getThingImage" siena:isDeprecated="false">
+        <doc title="Get the picture of the thing&#xA;Get the picture of the thing" />
+        <request />
+        <response>
+          <representation mediaType="application/json" element="service:ResponseEntity" />
+        </response>
+      </method>
+    </resource>
+    <resource path="/{connectionId}/api/things/{id}/last_measurements">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <param style="template" name="id" type="xs:string" required="true">
+        <doc title="Id of a thing. Cannot be empty." />
+      </param>
+      <method siena:requiresAuthentication="true" name="GET" id="getLastMeasures" siena:isDeprecated="false">
+        <doc title="Last measurements of a thing&#xA;Last measurements of a thing" />
+        <request />
+        <response>
+          <representation mediaType="application/json" element="service:getLastMeasures_responses_200_def" />
+        </response>
+      </method>
+    </resource>
+    <resource path="/{connectionId}/api/things/{id}/last_message">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <param style="template" name="id" type="xs:string" required="true">
+        <doc title="Id of a thing. Cannot be empty." />
+      </param>
+      <method siena:requiresAuthentication="true" name="GET" id="getLastMessage" siena:isDeprecated="false">
+        <doc title="Last message of a thing&#xA;Last message of a thing" />
+        <request />
+        <response>
+          <representation mediaType="application/json" element="service:MessageTinyRo" />
+        </response>
+      </method>
+    </resource>
+    <resource path="/{connectionId}/api/things/{id}/measures">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <param style="template" name="id" type="xs:string" required="true">
+        <doc title="Id of a thing. Cannot be empty." />
+      </param>
+      <method siena:requiresAuthentication="true" name="GET" id="getThingMeasures" siena:isDeprecated="false">
+        <doc title="Get a list of measures of a thing&#xA;Get a list of measures of a thing" />
+        <request>
+          <param style="query" name="detailed" type="xs:boolean" default="false">
+            <doc title="Boolean for detailed information." />
+          </param>
+          <param style="query" name="page" type="xs:int">
+            <doc title="Number of the current page" />
+          </param>
+          <param style="query" name="pageSize" type="xs:int">
+            <doc title="Number of item in the page" />
+          </param>
+          <param style="query" name="sortValues" type="xs:string">
+            <doc title="String for sort value" />
+          </param>
+          <param style="query" name="sort" type="xs:string">
+            <doc title="String for sort value" />
+          </param>
+          <param style="query" name="filter" type="xs:string">
+            <doc title="String for filter" />
+          </param>
+          <param style="query" name="dir" type="xs:string">
+            <doc title="Sort direction (ASC/DESC)" />
+            <option value="ASC" />
+            <option value="DESC" />
+          </param>
+          <param style="query" name="orFilter" type="xs:string">
+            <doc title="Or filter parameter" />
+          </param>
+        </request>
+        <response>
+          <representation mediaType="application/json" element="service:PageMeasureRo" />
+        </response>
+      </method>
+    </resource>
+    <resource path="/{connectionId}/api/things/{id}/messages">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <param style="template" name="id" type="xs:string" required="true">
+        <doc title="Id of a thing. Cannot be empty." />
+      </param>
+      <method siena:requiresAuthentication="true" name="GET" id="getThingMessages" siena:isDeprecated="false">
+        <doc title="Get a list of messages of a thing&#xA;Get a list of messages of a thing" />
+        <request>
+          <param style="query" name="page" type="xs:int">
+            <doc title="Number of the current page" />
+          </param>
+          <param style="query" name="pageSize" type="xs:int">
+            <doc title="Number of item in the page" />
+          </param>
+          <param style="query" name="sortValues" type="xs:string">
+            <doc title="String for sort value" />
+          </param>
+          <param style="query" name="sort" type="xs:string">
+            <doc title="String for sort value" />
+          </param>
+          <param style="query" name="filter" type="xs:string">
+            <doc title="String for filter" />
+          </param>
+          <param style="query" name="dir" type="xs:string">
+            <doc title="Sort direction (ASC/DESC)" />
+            <option value="ASC" />
+            <option value="DESC" />
+          </param>
+          <param style="query" name="orFilter" type="xs:string">
+            <doc title="Or filter parameter" />
+          </param>
+        </request>
+        <response>
+          <representation mediaType="application/json" element="service:PageMessageRo" />
+        </response>
+      </method>
+    </resource>
+    <resource path="/{connectionId}/api/things/{id}/messages">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <param style="template" name="id" type="xs:string" required="true">
+        <doc title="Id of a thing. Cannot be empty." />
+      </param>
+      <method siena:requiresAuthentication="true" name="DELETE" id="deleteThingMessages" siena:isDeprecated="false">
+        <doc title="Delete all measures for a thing&#xA;Delete all measures for a thing" />
+        <request />
+      </method>
+    </resource>
+    <resource path="/{connectionId}/api/things/{id}/messages">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <param style="template" name="id" type="xs:string" required="true">
+        <doc title="Id of a thing. Cannot be empty." />
+      </param>
+      <method siena:requiresAuthentication="true" name="POST" id="createThingMessages" siena:isDeprecated="false">
+        <doc title="All messages of a thing&#xA;All messages of a thing" />
+        <request>
+          <representation mediaType="application/json">
+            <param style="plain" name="body" path="/body" type="xs:string" required="true" />
+            <param style="plain" name="creationDate" path="/creationDate" type="service:MessageRo_creationDate_def" required="true" />
+            <param style="plain" name="errorMessage" path="/errorMessage" type="xs:string" required="true" />
+            <param style="plain" name="id" path="/id" type="xs:string" />
+            <param style="plain" name="latitude" path="/latitude" type="xs:double" required="true" />
+            <param style="plain" name="link" path="/link" type="service:URI" />
+            <param style="plain" name="longitude" path="/longitude" type="xs:double" required="true" />
+            <param style="plain" name="measurements" path="/measurements" type="service:JsonNode" />
+            <param style="plain" name="metadata" path="/metadata" type="xs:string" required="true" />
+            <param style="plain" name="number" path="/number" type="xs:long" required="true" />
+            <param style="plain" name="processed" path="/processed" type="xs:string" required="true">
+              <option value="TODO" />
+              <option value="DONE" />
+              <option value="IN_PROGRESS" />
+              <option value="ASSOCIATED" />
+              <option value="TO_BE_FORWARDED" />
+              <option value="ERROR_CUSTOM" />
+              <option value="TODO_CUSTOM" />
+              <option value="ERROR" />
+            </param>
+            <param style="plain" name="rawMeasurements" path="/rawMeasurements" type="service:JsonNode" />
+            <param style="plain" name="thing" path="/thing" type="service:ThingTinyRo" required="true" />
+            <param style="plain" name="timestamp" path="/timestamp" type="service:MessageRo_timestamp_def" required="true" />
+            <param style="plain" name="topic" path="/topic" type="xs:string" required="true" />
+          </representation>
+        </request>
+        <response>
+          <representation mediaType="application/json" element="service:MessageRo" />
+        </response>
+      </method>
+    </resource>
+    <resource path="/{connectionId}/api/things/{id}/model">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <param style="template" name="id" type="xs:string" required="true">
+        <doc title="Id of a thing. Cannot be empty." />
+      </param>
+      <method siena:requiresAuthentication="true" name="GET" id="getThingModel" siena:isDeprecated="false">
+        <doc title="Get the active model of a thing&#xA;Get the active model of a thing" />
+        <request />
+        <response>
+          <representation mediaType="application/json" element="service:ModelRo" />
+        </response>
+      </method>
+    </resource>
+    <resource path="/{connectionId}/api/things/{id}/operations">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <param style="template" name="id" type="xs:string" required="true">
+        <doc title="Id of a thing. Cannot be empty." />
+      </param>
+      <method siena:requiresAuthentication="true" name="GET" id="getThingOperations" siena:isDeprecated="false">
+        <doc title="Get the list of available operations&#xA;Get the list of available operations" />
+        <request />
+        <response>
+          <representation mediaType="application/json" element="service:PageOperationRo" />
+        </response>
+      </method>
+    </resource>
+    <resource path="/{connectionId}/api/things/{id}/operations/{operationId}">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <param style="template" name="id" type="xs:string" required="true">
+        <doc title="Id of a thing. Cannot be empty." />
+      </param>
+      <param style="template" name="operationId" type="xs:string" required="true">
+        <doc title="Id of an operation. Cannot be empty." />
+      </param>
+      <method siena:requiresAuthentication="true" name="POST" id="executeThingOperation" siena:isDeprecated="false">
+        <doc title="Execute an operation on a thing&#xA;Execute an operation on a thing" />
+        <request>
+          <representation mediaType="application/json">
+            <param style="plain" name="array" path="/array" type="xs:boolean" />
+            <param style="plain" name="bigDecimal" path="/bigDecimal" type="xs:boolean" />
+            <param style="plain" name="bigInteger" path="/bigInteger" type="xs:boolean" />
+            <param style="plain" name="binary" path="/binary" type="xs:boolean" />
+            <param style="plain" name="boolean" path="/boolean" type="xs:boolean" />
+            <param style="plain" name="containerNode" path="/containerNode" type="xs:boolean" />
+            <param style="plain" name="double" path="/double" type="xs:boolean" />
+            <param style="plain" name="float" path="/float" type="xs:boolean" />
+            <param style="plain" name="floatingPointNumber" path="/floatingPointNumber" type="xs:boolean" />
+            <param style="plain" name="int" path="/int" type="xs:boolean" />
+            <param style="plain" name="integralNumber" path="/integralNumber" type="xs:boolean" />
+            <param style="plain" name="long" path="/long" type="xs:boolean" />
+            <param style="plain" name="missingNode" path="/missingNode" type="xs:boolean" />
+            <param style="plain" name="nodeType" path="/nodeType" type="xs:string">
+              <option value="ARRAY" />
+              <option value="BINARY" />
+              <option value="BOOLEAN" />
+              <option value="MISSING" />
+              <option value="NULL" />
+              <option value="NUMBER" />
+              <option value="OBJECT" />
+              <option value="POJO" />
+              <option value="STRING" />
+            </param>
+            <param style="plain" name="null" path="/null" type="xs:boolean" />
+            <param style="plain" name="number" path="/number" type="xs:boolean" />
+            <param style="plain" name="object" path="/object" type="xs:boolean" />
+            <param style="plain" name="pojo" path="/pojo" type="xs:boolean" />
+            <param style="plain" name="short" path="/short" type="xs:boolean" />
+            <param style="plain" name="textual" path="/textual" type="xs:boolean" />
+            <param style="plain" name="valueNode" path="/valueNode" type="xs:boolean" />
+          </representation>
+        </request>
+        <response>
+          <representation mediaType="application/json" element="service:ResponseEntity" />
+        </response>
+      </method>
+    </resource>
+    <resource path="/{connectionId}/api/things/{id}/positions">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <param style="template" name="id" type="xs:string" required="true">
+        <doc title="Id of a thing. Cannot be empty." />
+      </param>
+      <method siena:requiresAuthentication="true" name="PUT" id="updateThingFixedPosition" siena:isDeprecated="false">
+        <doc title="Update position of a thing&#xA;Update position of a thing" />
+        <request>
+          <representation mediaType="application/json">
+            <param style="plain" name="customFields" path="/customFields" type="service:ThingRo_customFields_def" />
+            <param style="plain" name="description" path="/description" type="xs:string" />
+            <param style="plain" name="displayName" path="/displayName" type="xs:string" />
+            <param style="plain" name="dynamicGps" path="/dynamicGps" type="xs:boolean" />
+            <param style="plain" name="fixedLatitude" path="/fixedLatitude" type="xs:double" />
+            <param style="plain" name="fixedLongitude" path="/fixedLongitude" type="xs:double" />
+            <param style="plain" name="fixedName" path="/fixedName" type="xs:string" />
+            <param style="plain" name="id" path="/id" type="xs:string" />
+            <param style="plain" name="lastActivityDate" path="/lastActivityDate" type="xs:long" />
+            <param style="plain" name="lastLatitude" path="/lastLatitude" type="xs:double" />
+            <param style="plain" name="lastLongitude" path="/lastLongitude" type="xs:double" />
+            <param style="plain" name="lastMeasurements" path="/lastMeasurements" type="service:JsonNode" />
+            <param style="plain" name="lastMeasurementsTimestamps" path="/lastMeasurementsTimestamps" type="service:JsonNode" />
+            <param style="plain" name="lastMessageDate" path="/lastMessageDate" type="xs:long" />
+            <param style="plain" name="messageActivityTimeoutPeriod" path="/messageActivityTimeoutPeriod" type="xs:long" />
+            <param style="plain" name="name" path="/name" type="xs:string" required="true" />
+            <param style="plain" name="nbAlerts" path="/nbAlerts" type="xs:long" />
+            <param style="plain" name="site" path="/site" type="service:SiteRo" />
+            <param style="plain" name="status" path="/status" type="xs:string">
+              <option value="PROVISIONED" />
+              <option value="PENDING" />
+              <option value="INACTIVE" />
+              <option value="ACTIVE" />
+              <option value="WARNING" />
+              <option value="SUSPENDED" />
+              <option value="DELETED" />
+              <option value="IN_ASSOCIATION" />
+              <option value="IN_DISSOCIATION" />
+              <option value="OUT_OF_ORDER" />
+              <option value="CREATED" />
+              <option value="VIRTUAL" />
+            </param>
+            <param style="plain" name="tags" path="/tags" type="service:ThingRo_tags_def" />
+          </representation>
+        </request>
+        <response>
+          <representation mediaType="application/json" element="service:SingleThingRo" />
+        </response>
+      </method>
+    </resource>
+    <resource path="/{connectionId}/api/things/{id}/product">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <param style="template" name="id" type="xs:string" required="true">
+        <doc title="Id of a thing. Cannot be empty." />
+      </param>
+      <method siena:requiresAuthentication="true" name="GET" id="getThingProduct" siena:isDeprecated="false">
+        <doc title="Get the product of a thing&#xA;Get the product of a thing" />
+        <request />
+        <response>
+          <representation mediaType="application/json" element="service:ProductRo" />
+        </response>
+      </method>
+    </resource>
+    <resource path="/{connectionId}/api/things/{id}/product">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <param style="template" name="id" type="xs:string" required="true">
+        <doc title="Id of a thing. Cannot be empty." />
+      </param>
+      <method siena:requiresAuthentication="true" name="DELETE" id="dissociateThingProduct" siena:isDeprecated="false">
+        <doc title="Dissociate the thing from the product&#xA;Dissociate the thing from the product" />
+        <request />
+        <response>
+          <representation mediaType="application/json" element="service:SingleThingRo" />
+        </response>
+      </method>
+    </resource>
+    <resource path="/{connectionId}/api/things/{id}/product">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <param style="template" name="id" type="xs:string" required="true">
+        <doc title="Id of a thing. Cannot be empty." />
+      </param>
+      <method siena:requiresAuthentication="true" name="PUT" id="associateThingProduct" siena:isDeprecated="false">
+        <doc title="Associate a product to a thing&#xA;Associate a product to a thing" />
+        <request>
+          <representation mediaType="application/json">
+            <param style="plain" name="certification" path="/certification" type="xs:string" />
+            <param style="plain" name="connectivityTypes" path="/connectivityTypes" type="service:ProductRo_connectivityTypes_def" />
+            <param style="plain" name="decoder" path="/decoder" type="service:DecoderTinyRo" />
+            <param style="plain" name="description" path="/description" type="xs:string" />
+            <param style="plain" name="encoder" path="/encoder" type="service:EncoderTinyRo" />
+            <param style="plain" name="generateLinks" path="/generateLinks" type="xs:boolean" />
+            <param style="plain" name="hasImage" path="/hasImage" type="xs:boolean" />
+            <param style="plain" name="id" path="/id" type="xs:string" />
+            <param style="plain" name="imageLink" path="/imageLink" type="xs:string" />
+            <param style="plain" name="infoLink" path="/infoLink" type="xs:string" />
+            <param style="plain" name="link" path="/link" type="xs:string" />
+            <param style="plain" name="manufacturer" path="/manufacturer" type="service:ManufacturerTinyRo" />
+            <param style="plain" name="manufacturerCategory" path="/manufacturerCategory" type="xs:string" />
+            <param style="plain" name="model" path="/model" type="service:ModelTinyRo" />
+            <param style="plain" name="modelManufacturer" path="/modelManufacturer" type="service:ManufacturerTinyRo" />
+            <param style="plain" name="name" path="/name" type="xs:string" />
+            <param style="plain" name="readOnly" path="/readOnly" type="xs:boolean" />
+            <param style="plain" name="reference" path="/reference" type="xs:string" />
+            <param style="plain" name="tags" path="/tags" type="service:ProductRo_tags_def" />
+            <param style="plain" name="things" path="/things" type="service:ProductRo_things_def" />
+          </representation>
+        </request>
+        <response>
+          <representation mediaType="application/json" element="service:SingleThingRo" />
+        </response>
+      </method>
+    </resource>
+    <resource path="/{connectionId}/api/things/{id}/related_flows">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <param style="template" name="id" type="xs:string" required="true">
+        <doc title="Id of a thing. Cannot be empty." />
+      </param>
+      <method siena:requiresAuthentication="true" name="GET" id="getFlowsRelatedToThing" siena:isDeprecated="false">
+        <doc title="Related flows of a thing&#xA;Related flows of a thing" />
+        <request />
+        <response>
+          <representation mediaType="application/json" element="service:PageFlowRo" />
+        </response>
+      </method>
+    </resource>
+    <resource path="/{connectionId}/api/things/{id}/tags">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <param style="template" name="id" type="xs:string" required="true">
+        <doc title="Id of a thing. Cannot be empty." />
+      </param>
+      <method siena:requiresAuthentication="true" name="GET" id="getThingTags" siena:isDeprecated="false">
+        <doc title="Get thing tags&#xA;Get thing tags" />
+        <request />
+        <response>
+          <representation mediaType="application/json" element="service:PageThingTagRo" />
+        </response>
+      </method>
+    </resource>
+    <resource path="/{connectionId}/stats/avg">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <method siena:requiresAuthentication="true" name="GET" id="getStatsAvg" siena:isDeprecated="false">
+        <doc title="Get stats average&#xA;Get stats average" />
+        <request>
+          <param style="query" name="page" type="xs:int">
+            <doc title="Number of the current page" />
+          </param>
+          <param style="query" name="pageSize" type="xs:int">
+            <doc title="Number of item in the page" />
+          </param>
+          <param style="query" name="sortValues" type="xs:string">
+            <doc title="String for sort value" />
+          </param>
+          <param style="query" name="sort" type="xs:string">
+            <doc title="String for sort value" />
+          </param>
+          <param style="query" name="filter" type="xs:string">
+            <doc title="String for filter" />
+          </param>
+          <param style="query" name="dir" type="xs:string">
+            <doc title="Sort direction (ASC/DESC)" />
+            <option value="ASC" />
+            <option value="DESC" />
+          </param>
+          <param style="query" name="orFilter" type="xs:string">
+            <doc title="Or filter parameter" />
+          </param>
+          <param style="query" name="start" type="xs:long">
+            <doc title="start" />
+          </param>
+          <param style="query" name="end" type="xs:long">
+            <doc title="end" />
+          </param>
+        </request>
+        <response>
+          <representation mediaType="application/json" element="service:PageStatsMeasureRo" />
+        </response>
+      </method>
+    </resource>
+    <resource path="/{connectionId}/stats/count">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <method siena:requiresAuthentication="true" name="GET" id="getStatsCount" siena:isDeprecated="false">
+        <doc title="Get stats count&#xA;Get stats count" />
+        <request>
+          <param style="query" name="page" type="xs:int">
+            <doc title="Number of the current page" />
+          </param>
+          <param style="query" name="pageSize" type="xs:int">
+            <doc title="Number of item in the page" />
+          </param>
+          <param style="query" name="sortValues" type="xs:string">
+            <doc title="String for sort value" />
+          </param>
+          <param style="query" name="sort" type="xs:string">
+            <doc title="String for sort value" />
+          </param>
+          <param style="query" name="filter" type="xs:string">
+            <doc title="String for filter" />
+          </param>
+          <param style="query" name="dir" type="xs:string">
+            <doc title="Sort direction (ASC/DESC)" />
+            <option value="ASC" />
+            <option value="DESC" />
+          </param>
+          <param style="query" name="orFilter" type="xs:string">
+            <doc title="Or filter parameter" />
+          </param>
+          <param style="query" name="start" type="xs:long">
+            <doc title="start" />
+          </param>
+          <param style="query" name="end" type="xs:long">
+            <doc title="end" />
+          </param>
+        </request>
+        <response>
+          <representation mediaType="application/json" element="service:StatsCountRo" />
+        </response>
+      </method>
+    </resource>
+    <resource path="/{connectionId}/stats/last">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <method siena:requiresAuthentication="true" name="GET" id="getStatsLast" siena:isDeprecated="false">
+        <doc title="Get stats last&#xA;Get stats last" />
+        <request>
+          <param style="query" name="page" type="xs:int">
+            <doc title="Number of the current page" />
+          </param>
+          <param style="query" name="pageSize" type="xs:int">
+            <doc title="Number of item in the page" />
+          </param>
+          <param style="query" name="sortValues" type="xs:string">
+            <doc title="String for sort value" />
+          </param>
+          <param style="query" name="sort" type="xs:string">
+            <doc title="String for sort value" />
+          </param>
+          <param style="query" name="filter" type="xs:string">
+            <doc title="String for filter" />
+          </param>
+          <param style="query" name="dir" type="xs:string">
+            <doc title="Sort direction (ASC/DESC)" />
+            <option value="ASC" />
+            <option value="DESC" />
+          </param>
+          <param style="query" name="orFilter" type="xs:string">
+            <doc title="Or filter parameter" />
+          </param>
+        </request>
+        <response>
+          <representation mediaType="application/json" element="service:PageStatsMeasureRo" />
+        </response>
+      </method>
+    </resource>
+    <resource path="/{connectionId}/stats/last/things/{thingId}">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <param style="template" name="thingId" type="xs:string" required="true">
+        <doc title="Id of a thing. Cannot be empty" />
+      </param>
+      <method siena:requiresAuthentication="true" name="GET" id="getThingStatsLast" siena:isDeprecated="false">
+        <doc title="Get stats last&#xA;Get stats last" />
+        <request>
+          <param style="query" name="page" type="xs:int">
+            <doc title="Number of the current page" />
+          </param>
+          <param style="query" name="pageSize" type="xs:int">
+            <doc title="Number of item in the page" />
+          </param>
+          <param style="query" name="sortValues" type="xs:string">
+            <doc title="String for sort value" />
+          </param>
+          <param style="query" name="sort" type="xs:string">
+            <doc title="String for sort value" />
+          </param>
+          <param style="query" name="filter" type="xs:string">
+            <doc title="String for filter" />
+          </param>
+          <param style="query" name="dir" type="xs:string">
+            <doc title="Sort direction (ASC/DESC)" />
+            <option value="ASC" />
+            <option value="DESC" />
+          </param>
+          <param style="query" name="orFilter" type="xs:string">
+            <doc title="Or filter parameter" />
+          </param>
+        </request>
+        <response>
+          <representation mediaType="application/json" element="service:PageStatsMeasureRo" />
+        </response>
+      </method>
+    </resource>
+    <resource path="/{connectionId}/stats/max">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <method siena:requiresAuthentication="true" name="GET" id="getStatsMax" siena:isDeprecated="false">
+        <doc title="Get stats max&#xA;Get stats max" />
+        <request>
+          <param style="query" name="page" type="xs:int">
+            <doc title="Number of the current page" />
+          </param>
+          <param style="query" name="pageSize" type="xs:int">
+            <doc title="Number of item in the page" />
+          </param>
+          <param style="query" name="sortValues" type="xs:string">
+            <doc title="String for sort value" />
+          </param>
+          <param style="query" name="sort" type="xs:string">
+            <doc title="String for sort value" />
+          </param>
+          <param style="query" name="filter" type="xs:string">
+            <doc title="String for filter" />
+          </param>
+          <param style="query" name="dir" type="xs:string">
+            <doc title="Sort direction (ASC/DESC)" />
+            <option value="ASC" />
+            <option value="DESC" />
+          </param>
+          <param style="query" name="orFilter" type="xs:string">
+            <doc title="Or filter parameter" />
+          </param>
+          <param style="query" name="start" type="xs:long">
+            <doc title="start" />
+          </param>
+          <param style="query" name="end" type="xs:long">
+            <doc title="end" />
+          </param>
+        </request>
+        <response>
+          <representation mediaType="application/json" element="service:PageStatsMeasureRo" />
+        </response>
+      </method>
+    </resource>
+    <resource path="/{connectionId}/stats/measurements">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <method siena:requiresAuthentication="true" name="GET" id="getStatsMeasurements" siena:isDeprecated="false">
+        <doc title="Get stats measurements&#xA;Get stats measurements" />
+        <request>
+          <param style="query" name="page" type="xs:int">
+            <doc title="Number of the current page" />
+          </param>
+          <param style="query" name="pageSize" type="xs:int">
+            <doc title="Number of item in the page" />
+          </param>
+          <param style="query" name="sortValues" type="xs:string">
+            <doc title="String for sort value" />
+          </param>
+          <param style="query" name="sort" type="xs:string">
+            <doc title="String for sort value" />
+          </param>
+          <param style="query" name="filter" type="xs:string">
+            <doc title="String for filter" />
+          </param>
+          <param style="query" name="dir" type="xs:string">
+            <doc title="Sort direction (ASC/DESC)" />
+            <option value="ASC" />
+            <option value="DESC" />
+          </param>
+          <param style="query" name="orFilter" type="xs:string">
+            <doc title="Or filter parameter" />
+          </param>
+          <param style="query" name="time" type="xs:int">
+            <doc title="time" />
+          </param>
+          <param style="query" name="interval" type="xs:string">
+            <doc title="interval" />
+          </param>
+          <param style="query" name="start" type="xs:long" required="true">
+            <doc title="start" />
+          </param>
+          <param style="query" name="end" type="xs:long" required="true">
+            <doc title="end" />
+          </param>
+        </request>
+        <response>
+          <representation mediaType="application/json" element="service:getStatsMeasurements_responses_200_def" />
+        </response>
+      </method>
+    </resource>
+    <resource path="/{connectionId}/stats/min">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <method siena:requiresAuthentication="true" name="GET" id="getStatsMin" siena:isDeprecated="false">
+        <doc title="Get stats min&#xA;Get stats min" />
+        <request>
+          <param style="query" name="page" type="xs:int">
+            <doc title="Number of the current page" />
+          </param>
+          <param style="query" name="pageSize" type="xs:int">
+            <doc title="Number of item in the page" />
+          </param>
+          <param style="query" name="sortValues" type="xs:string">
+            <doc title="String for sort value" />
+          </param>
+          <param style="query" name="sort" type="xs:string">
+            <doc title="String for sort value" />
+          </param>
+          <param style="query" name="filter" type="xs:string">
+            <doc title="String for filter" />
+          </param>
+          <param style="query" name="dir" type="xs:string">
+            <doc title="Sort direction (ASC/DESC)" />
+            <option value="ASC" />
+            <option value="DESC" />
+          </param>
+          <param style="query" name="orFilter" type="xs:string">
+            <doc title="Or filter parameter" />
+          </param>
+          <param style="query" name="start" type="xs:long">
+            <doc title="start" />
+          </param>
+          <param style="query" name="end" type="xs:long">
+            <doc title="end" />
+          </param>
+        </request>
+        <response>
+          <representation mediaType="application/json" element="service:PageStatsMeasureRo" />
+        </response>
+      </method>
+    </resource>
+    <resource path="/{connectionId}/stats/repartition">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <method siena:requiresAuthentication="true" name="GET" id="getStatsRepartition" siena:isDeprecated="false">
+        <doc title="Get stats repartition&#xA;Get stats repartition" />
+        <request>
+          <param style="query" name="attribute" type="xs:string" required="true">
+            <doc title="attribute" />
+          </param>
+          <param style="query" name="page" type="xs:int">
+            <doc title="Number of the current page" />
+          </param>
+          <param style="query" name="pageSize" type="xs:int">
+            <doc title="Number of item in the page" />
+          </param>
+          <param style="query" name="sortValues" type="xs:string">
+            <doc title="String for sort value" />
+          </param>
+          <param style="query" name="sort" type="xs:string">
+            <doc title="String for sort value" />
+          </param>
+          <param style="query" name="filter" type="xs:string">
+            <doc title="String for filter" />
+          </param>
+          <param style="query" name="dir" type="xs:string">
+            <doc title="Sort direction (ASC/DESC)" />
+            <option value="ASC" />
+            <option value="DESC" />
+          </param>
+          <param style="query" name="orFilter" type="xs:string">
+            <doc title="Or filter parameter" />
+          </param>
+          <param style="query" name="start" type="xs:long">
+            <doc title="start" />
+          </param>
+          <param style="query" name="end" type="xs:long">
+            <doc title="end" />
+          </param>
+        </request>
+        <response>
+          <representation mediaType="application/json" element="service:getStatsRepartition_responses_200_def" />
+        </response>
+      </method>
+    </resource>
+    <resource path="/{connectionId}/stats/sum">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <method siena:requiresAuthentication="true" name="GET" id="getStatsSum" siena:isDeprecated="false">
+        <doc title="Get stats sum&#xA;Get stats sum" />
+        <request>
+          <param style="query" name="page" type="xs:int">
+            <doc title="Number of the current page" />
+          </param>
+          <param style="query" name="pageSize" type="xs:int">
+            <doc title="Number of item in the page" />
+          </param>
+          <param style="query" name="sortValues" type="xs:string">
+            <doc title="String for sort value" />
+          </param>
+          <param style="query" name="sort" type="xs:string">
+            <doc title="String for sort value" />
+          </param>
+          <param style="query" name="filter" type="xs:string">
+            <doc title="String for filter" />
+          </param>
+          <param style="query" name="dir" type="xs:string">
+            <doc title="Sort direction (ASC/DESC)" />
+            <option value="ASC" />
+            <option value="DESC" />
+          </param>
+          <param style="query" name="orFilter" type="xs:string">
+            <doc title="Or filter parameter" />
+          </param>
+          <param style="query" name="time" type="xs:int">
+            <doc title="time" />
+          </param>
+          <param style="query" name="interval" type="xs:string">
+            <doc title="interval" />
+          </param>
+          <param style="query" name="start" type="xs:long" required="true">
+            <doc title="start" />
+          </param>
+          <param style="query" name="end" type="xs:long" required="true">
+            <doc title="end" />
+          </param>
+        </request>
+        <response>
+          <representation mediaType="application/json" element="service:getStatsSum_responses_200_def" />
+        </response>
+      </method>
+    </resource>
+  </resources>
+  <authenticationProviders xmlns="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11">
+    <connectionProvider id="PowerAppAuth" siena:connectionProviderId="shared_pilotthings" />
+  </authenticationProviders>
+  <template xmlns="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11">
+    <variable name="connectionId">
+      <modifyParams style="template" name="connectionId" attribute="fixed" />
+    </variable>
+  </template>
+</application>
