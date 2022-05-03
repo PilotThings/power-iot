@@ -1,5 +1,5 @@
 <application xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:service="https://europe-002.azure-apim.net/apim/pilotthings" xmlns:siena="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11" siena:serviceId="PilotThings" xmlns="http://wadl.dev.java.net/2009/02">
-  <doc title="Pilot Things">Pilot Things is a platform to manage, visualize, automate and integrate your IoT device fleet.</doc>
+  <doc title="Pilot Things">Pilot Things est une plateforme pour gérer, visualiser, automatiser et intégrer votre flotte d’appareils IoT.</doc>
   <grammars>
     <jsonTypes targetNamespace="https://europe-002.azure-apim.net/apim/pilotthings" xmlns="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11">
       <array typeRef="MeasureRo" name="PageMeasureRo_data_def" />
@@ -792,37 +792,37 @@
   <resources siena:authenticationProviderHref="#PowerAppAuth" base="https://europe-002.azure-apim.net/apim/pilotthings">
     <resource path="/{connectionId}/api/alerts">
       <param style="template" name="connectionId" type="xs:string" required="true" />
-      <method siena:requiresAuthentication="true" name="GET" id="getAlerts" siena:isDeprecated="false">
-        <doc title="Get a list of alerts&#xA;Get a list of alerts" />
+      <method siena:requiresAuthentication="true" name="GET" id="getAlerts" actionName="getAlerts" siena:isDeprecated="false">
+        <doc title="Récupérer la liste des alertes&#xA;Récupérer la liste des alertes" />
         <request>
           <param style="query" name="page" type="xs:int">
-            <doc title="Number of the current page" />
+            <doc title="Numéro de la page actuelle" />
           </param>
           <param style="query" name="pageSize" type="xs:int">
-            <doc title="Number of item in the page" />
+            <doc title="Numéro de l’élément de la page" />
           </param>
           <param style="query" name="sortValues" type="xs:string">
-            <doc title="String for sort value" />
+            <doc title="Chaîne de valeur de tri" />
           </param>
           <param style="query" name="sort" type="xs:string">
-            <doc title="String for sort value" />
+            <doc title="Chaîne de valeur de tri" />
           </param>
           <param style="query" name="filter" type="xs:string">
-            <doc title="String for filter" />
+            <doc title="Chaîne du filtre" />
           </param>
           <param style="query" name="dir" type="xs:string">
-            <doc title="Sort direction (ASC/DESC)" />
+            <doc title="Sens de tri (ASC/DESC)" />
             <option value="ASC" />
             <option value="DESC" />
           </param>
           <param style="query" name="orFilter" type="xs:string">
-            <doc title="Or filter parameter" />
+            <doc title="Ou paramètre de filtre" />
           </param>
           <param style="query" name="dateStart" type="xs:long" default="0">
-            <doc title="Timestamp with date start" />
+            <doc title="Horodateur avec date de début" />
           </param>
           <param style="query" name="dateEnd" type="xs:long" default="0">
-            <doc title="Timestamp with date end" />
+            <doc title="Horodateur avec date de fin" />
           </param>
         </request>
         <response>
@@ -833,14 +833,14 @@
     <resource path="/{connectionId}/api/alerts/{id}">
       <param style="template" name="connectionId" type="xs:string" required="true" />
       <param style="template" name="id" type="xs:string" required="true">
-        <doc title="Id of an alert. Cannot be empty." />
+        <doc title="ID d’une alerte. Ne peut pas être vide." />
       </param>
-      <method siena:requiresAuthentication="true" name="PUT" id="updateAlertState" siena:isDeprecated="false">
-        <doc title="Update alert state&#xA;Update alert state" />
+      <method siena:requiresAuthentication="true" name="PUT" id="updateAlertState" actionName="updateAlertState" siena:isDeprecated="false">
+        <doc title="Mettre à jour l’état d’alerte&#xA;Mettre à jour l’état d’alerte" />
         <request>
           <representation mediaType="application/json">
             <param style="plain" name="paramJson" path="" type="xs:string" required="true">
-              <doc title="Value of state. Cannot be empty." />
+              <doc title="Valeur de l’état. Ne peut pas être vide." />
             </param>
           </representation>
         </request>
@@ -851,34 +851,34 @@
     </resource>
     <resource path="/{connectionId}/api/measures">
       <param style="template" name="connectionId" type="xs:string" required="true" />
-      <method siena:requiresAuthentication="true" name="GET" id="getMeasures" siena:isDeprecated="false">
-        <doc title="Get a list of measures&#xA;Get a list of measures" />
+      <method siena:requiresAuthentication="true" name="GET" id="getMeasures" actionName="getMeasures" siena:isDeprecated="false">
+        <doc title="Obtenir la liste des mesures&#xA;Obtenir la liste des mesures" />
         <request>
           <param style="query" name="detailed" type="xs:boolean" default="false">
-            <doc title="Boolean for detailed information" />
+            <doc title="Valeur booléenne pour plus d’informations" />
           </param>
           <param style="query" name="page" type="xs:int">
-            <doc title="Number of the current page" />
+            <doc title="Numéro de la page actuelle" />
           </param>
           <param style="query" name="pageSize" type="xs:int">
-            <doc title="Number of item in the page" />
+            <doc title="Numéro de l’élément de la page" />
           </param>
           <param style="query" name="sortValues" type="xs:string">
-            <doc title="String for sort value" />
+            <doc title="Chaîne de valeur de tri" />
           </param>
           <param style="query" name="sort" type="xs:string">
-            <doc title="String for sort value" />
+            <doc title="Chaîne de valeur de tri" />
           </param>
           <param style="query" name="filter" type="xs:string">
-            <doc title="String for filter" />
+            <doc title="Chaîne du filtre" />
           </param>
           <param style="query" name="dir" type="xs:string">
-            <doc title="Sort direction (ASC/DESC)" />
+            <doc title="Sens de tri (ASC/DESC)" />
             <option value="ASC" />
             <option value="DESC" />
           </param>
           <param style="query" name="orFilter" type="xs:string">
-            <doc title="Or filter parameter" />
+            <doc title="Ou paramètre de filtre" />
           </param>
         </request>
         <response>
@@ -888,31 +888,31 @@
     </resource>
     <resource path="/{connectionId}/api/measures/count">
       <param style="template" name="connectionId" type="xs:string" required="true" />
-      <method siena:requiresAuthentication="true" name="GET" id="getCount" siena:isDeprecated="false">
-        <doc title="Get measures count&#xA;Get measures count" />
+      <method siena:requiresAuthentication="true" name="GET" id="getCount" actionName="getCount" siena:isDeprecated="false">
+        <doc title="Récupérer le nombre de mesures&#xA;Récupérer le nombre de mesures" />
         <request>
           <param style="query" name="page" type="xs:int">
-            <doc title="Number of the current page" />
+            <doc title="Numéro de la page actuelle" />
           </param>
           <param style="query" name="pageSize" type="xs:int">
-            <doc title="Number of item in the page" />
+            <doc title="Numéro de l’élément de la page" />
           </param>
           <param style="query" name="sortValues" type="xs:string">
-            <doc title="String for sort value" />
+            <doc title="Chaîne de valeur de tri" />
           </param>
           <param style="query" name="sort" type="xs:string">
-            <doc title="String for sort value" />
+            <doc title="Chaîne de valeur de tri" />
           </param>
           <param style="query" name="filter" type="xs:string">
-            <doc title="String for filter" />
+            <doc title="Chaîne du filtre" />
           </param>
           <param style="query" name="dir" type="xs:string">
-            <doc title="Sort direction (ASC/DESC)" />
+            <doc title="Sens de tri (ASC/DESC)" />
             <option value="ASC" />
             <option value="DESC" />
           </param>
           <param style="query" name="orFilter" type="xs:string">
-            <doc title="Or filter parameter" />
+            <doc title="Ou paramètre de filtre" />
           </param>
         </request>
         <response>
@@ -923,13 +923,13 @@
     <resource path="/{connectionId}/api/measures/{id}">
       <param style="template" name="connectionId" type="xs:string" required="true" />
       <param style="template" name="id" type="xs:string" required="true">
-        <doc title="Id of a measure. Cannot be empty." />
+        <doc title="ID d’une mesure Ne peut pas être vide." />
       </param>
-      <method siena:requiresAuthentication="true" name="GET" id="getMeasure" siena:isDeprecated="false">
-        <doc title="Get a measure&#xA;Get a measure" />
+      <method siena:requiresAuthentication="true" name="GET" id="getMeasure" actionName="getMeasure" siena:isDeprecated="false">
+        <doc title="Récupérer une mesure&#xA;Récupérer une mesure" />
         <request>
           <param style="query" name="detailed" type="xs:boolean" default="false">
-            <doc title="Boolean for detailed information" />
+            <doc title="Valeur booléenne pour plus d’informations" />
           </param>
         </request>
         <response>
@@ -939,31 +939,31 @@
     </resource>
     <resource path="/{connectionId}/api/messages">
       <param style="template" name="connectionId" type="xs:string" required="true" />
-      <method siena:requiresAuthentication="true" name="GET" id="getMessages" siena:isDeprecated="false">
-        <doc title="Get a list of messages&#xA;Get a list of messages" />
+      <method siena:requiresAuthentication="true" name="GET" id="getMessages" actionName="getMessages" siena:isDeprecated="false">
+        <doc title="Récupérer la liste de messages&#xA;Récupérer la liste de messages" />
         <request>
           <param style="query" name="page" type="xs:int">
-            <doc title="Number of the current page" />
+            <doc title="Numéro de la page actuelle" />
           </param>
           <param style="query" name="pageSize" type="xs:int">
-            <doc title="Number of item in the page" />
+            <doc title="Numéro de l’élément de la page" />
           </param>
           <param style="query" name="sortValues" type="xs:string">
-            <doc title="String for sort value" />
+            <doc title="Chaîne de valeur de tri" />
           </param>
           <param style="query" name="sort" type="xs:string">
-            <doc title="String for sort value" />
+            <doc title="Chaîne de valeur de tri" />
           </param>
           <param style="query" name="filter" type="xs:string">
-            <doc title="String for filter" />
+            <doc title="Chaîne du filtre" />
           </param>
           <param style="query" name="dir" type="xs:string">
-            <doc title="Sort direction (ASC/DESC)" />
+            <doc title="Sens de tri (ASC/DESC)" />
             <option value="ASC" />
             <option value="DESC" />
           </param>
           <param style="query" name="orFilter" type="xs:string">
-            <doc title="Or filter parameter" />
+            <doc title="Ou paramètre de filtre" />
           </param>
         </request>
         <response>
@@ -974,33 +974,33 @@
     <resource path="/{connectionId}/api/messages/things/{thingId}">
       <param style="template" name="connectionId" type="xs:string" required="true" />
       <param style="template" name="thingId" type="xs:string" required="true">
-        <doc title="Id of a thing. Cannot be empty." />
+        <doc title="ID d’une chose. Ne peut pas être vide." />
       </param>
-      <method siena:requiresAuthentication="true" name="GET" id="getMessagesAndMeasurements" siena:isDeprecated="false">
-        <doc title="Get message list for a thing&#xA;Get message list for a thing" />
+      <method siena:requiresAuthentication="true" name="GET" id="getMessagesAndMeasurements" actionName="getMessagesAndMeasurements" siena:isDeprecated="false">
+        <doc title="Récupérer la liste des messages pour une chose&#xA;Récupérer la liste des messages pour une chose" />
         <request>
           <param style="query" name="page" type="xs:int">
-            <doc title="Number of the current page" />
+            <doc title="Numéro de la page actuelle" />
           </param>
           <param style="query" name="pageSize" type="xs:int">
-            <doc title="Number of item in the page" />
+            <doc title="Numéro de l’élément de la page" />
           </param>
           <param style="query" name="sortValues" type="xs:string">
-            <doc title="String for sort value" />
+            <doc title="Chaîne de valeur de tri" />
           </param>
           <param style="query" name="sort" type="xs:string">
-            <doc title="String for sort value" />
+            <doc title="Chaîne de valeur de tri" />
           </param>
           <param style="query" name="filter" type="xs:string">
-            <doc title="String for filter" />
+            <doc title="Chaîne du filtre" />
           </param>
           <param style="query" name="dir" type="xs:string">
-            <doc title="Sort direction (ASC/DESC)" />
+            <doc title="Sens de tri (ASC/DESC)" />
             <option value="ASC" />
             <option value="DESC" />
           </param>
           <param style="query" name="orFilter" type="xs:string">
-            <doc title="Or filter parameter" />
+            <doc title="Ou paramètre de filtre" />
           </param>
         </request>
         <response>
@@ -1011,10 +1011,10 @@
     <resource path="/{connectionId}/api/messages/things/{thingId}">
       <param style="template" name="connectionId" type="xs:string" required="true" />
       <param style="template" name="thingId" type="xs:string" required="true">
-        <doc title="Id of a thing. Cannot be empty." />
+        <doc title="ID d’une chose. Ne peut pas être vide." />
       </param>
-      <method siena:requiresAuthentication="true" name="POST" id="addMessage" siena:isDeprecated="false">
-        <doc title="Add a message&#xA;Add a message" />
+      <method siena:requiresAuthentication="true" name="POST" id="addMessage" actionName="addMessage" siena:isDeprecated="false">
+        <doc title="Ajouter un message&#xA;Ajouter un message" />
         <request>
           <representation mediaType="application/json">
             <param style="plain" name="body" path="/body" type="xs:string" required="true" />
@@ -1051,10 +1051,10 @@
     <resource path="/{connectionId}/api/messages/{id}">
       <param style="template" name="connectionId" type="xs:string" required="true" />
       <param style="template" name="id" type="xs:string" required="true">
-        <doc title="Id of a message. Cannot be empty." />
+        <doc title="ID d’un message. Ne peut pas être vide." />
       </param>
-      <method siena:requiresAuthentication="true" name="GET" id="getMessage" siena:isDeprecated="false">
-        <doc title="Get a message&#xA;Get a message" />
+      <method siena:requiresAuthentication="true" name="GET" id="getMessage" actionName="getMessage" siena:isDeprecated="false">
+        <doc title="Récupérer un message&#xA;Récupérer un message" />
         <request />
         <response>
           <representation mediaType="application/json" element="service:MessageRo" />
@@ -1064,10 +1064,10 @@
     <resource path="/{connectionId}/api/messages/{id}/previous">
       <param style="template" name="connectionId" type="xs:string" required="true" />
       <param style="template" name="id" type="xs:string" required="true">
-        <doc title="Id of a message. Cannot be empty." />
+        <doc title="ID d’un message. Ne peut pas être vide." />
       </param>
-      <method siena:requiresAuthentication="true" name="GET" id="getPreviousMessage" siena:isDeprecated="false">
-        <doc title="Get previous message&#xA;Get previous message" />
+      <method siena:requiresAuthentication="true" name="GET" id="getPreviousMessage" actionName="getPreviousMessage" siena:isDeprecated="false">
+        <doc title="Récupérer le message précédent&#xA;Récupérer le message précédent" />
         <request />
         <response>
           <representation mediaType="application/json" element="service:MessageRo" />
@@ -1076,31 +1076,31 @@
     </resource>
     <resource path="/{connectionId}/api/sites">
       <param style="template" name="connectionId" type="xs:string" required="true" />
-      <method siena:requiresAuthentication="true" name="GET" id="getSites" siena:isDeprecated="false">
-        <doc title="Get all site&#xA;Get previous message" />
+      <method siena:requiresAuthentication="true" name="GET" id="getSites" actionName="getSites" siena:isDeprecated="false">
+        <doc title="Récupérer tout le site&#xA;Récupérer le message précédent" />
         <request>
           <param style="query" name="page" type="xs:int">
-            <doc title="Number of the current page" />
+            <doc title="Numéro de la page actuelle" />
           </param>
           <param style="query" name="pageSize" type="xs:int">
-            <doc title="Number of item in the page" />
+            <doc title="Numéro de l’élément de la page" />
           </param>
           <param style="query" name="sortValues" type="xs:string">
-            <doc title="String for sort value" />
+            <doc title="Chaîne de valeur de tri" />
           </param>
           <param style="query" name="sort" type="xs:string">
-            <doc title="String for sort value" />
+            <doc title="Chaîne de valeur de tri" />
           </param>
           <param style="query" name="filter" type="xs:string">
-            <doc title="String for filter" />
+            <doc title="Chaîne du filtre" />
           </param>
           <param style="query" name="dir" type="xs:string">
-            <doc title="Sort direction (ASC/DESC)" />
+            <doc title="Sens de tri (ASC/DESC)" />
             <option value="ASC" />
             <option value="DESC" />
           </param>
           <param style="query" name="orFilter" type="xs:string">
-            <doc title="Or filter parameter" />
+            <doc title="Ou paramètre de filtre" />
           </param>
         </request>
         <response>
@@ -1110,8 +1110,8 @@
     </resource>
     <resource path="/{connectionId}/api/sites">
       <param style="template" name="connectionId" type="xs:string" required="true" />
-      <method siena:requiresAuthentication="true" name="POST" id="createSite" siena:isDeprecated="false">
-        <doc title="Create new site&#xA;Create new site" />
+      <method siena:requiresAuthentication="true" name="POST" id="createSite" actionName="createSite" siena:isDeprecated="false">
+        <doc title="Créer un site&#xA;Créer un site" />
         <request>
           <representation mediaType="application/json">
             <param style="plain" name="array" path="/array" type="xs:boolean" />
@@ -1155,10 +1155,10 @@
     <resource path="/{connectionId}/api/sites/{id}">
       <param style="template" name="connectionId" type="xs:string" required="true" />
       <param style="template" name="id" type="xs:string" required="true">
-        <doc title="Id of a site. Cannot be empty." />
+        <doc title="ID d’un site. Ne peut pas être vide." />
       </param>
-      <method siena:requiresAuthentication="true" name="GET" id="getSite" siena:isDeprecated="false">
-        <doc title="Get a site&#xA;Get a site" />
+      <method siena:requiresAuthentication="true" name="GET" id="getSite" actionName="getSite" siena:isDeprecated="false">
+        <doc title="Récupérer un site&#xA;Récupérer un site" />
         <request />
         <response>
           <representation mediaType="application/json" element="service:SiteRo" />
@@ -1168,20 +1168,20 @@
     <resource path="/{connectionId}/api/sites/{id}">
       <param style="template" name="connectionId" type="xs:string" required="true" />
       <param style="template" name="id" type="xs:string" required="true">
-        <doc title="Id of a site. Cannot be empty." />
+        <doc title="ID d’un site. Ne peut pas être vide." />
       </param>
-      <method siena:requiresAuthentication="true" name="DELETE" id="deleteSite" siena:isDeprecated="false">
-        <doc title="Delete a site&#xA;Delete a site" />
+      <method siena:requiresAuthentication="true" name="DELETE" id="deleteSite" actionName="deleteSite" siena:isDeprecated="false">
+        <doc title="Supprimer un site&#xA;Supprimer un site" />
         <request />
       </method>
     </resource>
     <resource path="/{connectionId}/api/sites/{id}">
       <param style="template" name="connectionId" type="xs:string" required="true" />
       <param style="template" name="id" type="xs:string" required="true">
-        <doc title="Id of a site. Cannot be empty." />
+        <doc title="ID d’un site. Ne peut pas être vide." />
       </param>
-      <method siena:requiresAuthentication="true" name="PUT" id="updateSite" siena:isDeprecated="false">
-        <doc title="Update a site&#xA;Update a site" />
+      <method siena:requiresAuthentication="true" name="PUT" id="updateSite" actionName="updateSite" siena:isDeprecated="false">
+        <doc title="Mettre à jour un site&#xA;Mettre à jour un site" />
         <request>
           <representation mediaType="application/json">
             <param style="plain" name="address" path="/address" type="xs:string" required="true" />
@@ -1200,31 +1200,31 @@
     </resource>
     <resource path="/{connectionId}/api/tags">
       <param style="template" name="connectionId" type="xs:string" required="true" />
-      <method siena:requiresAuthentication="true" name="GET" id="getTags" siena:isDeprecated="false">
-        <doc title="Get the list of tags&#xA;Get the list of tags" />
+      <method siena:requiresAuthentication="true" name="GET" id="getTags" actionName="getTags" siena:isDeprecated="false">
+        <doc title="Récupérer la liste des indicateurs&#xA;Récupérer la liste des indicateurs" />
         <request>
           <param style="query" name="page" type="xs:int">
-            <doc title="Number of the current page" />
+            <doc title="Numéro de la page actuelle" />
           </param>
           <param style="query" name="pageSize" type="xs:int">
-            <doc title="Number of item in the page" />
+            <doc title="Numéro de l’élément de la page" />
           </param>
           <param style="query" name="sortValues" type="xs:string">
-            <doc title="String for sort value" />
+            <doc title="Chaîne de valeur de tri" />
           </param>
           <param style="query" name="sort" type="xs:string">
-            <doc title="String for sort value" />
+            <doc title="Chaîne de valeur de tri" />
           </param>
           <param style="query" name="filter" type="xs:string">
-            <doc title="String for filter" />
+            <doc title="Chaîne du filtre" />
           </param>
           <param style="query" name="dir" type="xs:string">
-            <doc title="Sort direction (ASC/DESC)" />
+            <doc title="Sens de tri (ASC/DESC)" />
             <option value="ASC" />
             <option value="DESC" />
           </param>
           <param style="query" name="orFilter" type="xs:string">
-            <doc title="Or filter parameter" />
+            <doc title="Ou paramètre de filtre" />
           </param>
         </request>
         <response>
@@ -1234,8 +1234,8 @@
     </resource>
     <resource path="/{connectionId}/api/tags">
       <param style="template" name="connectionId" type="xs:string" required="true" />
-      <method siena:requiresAuthentication="true" name="PUT" id="updateThingTag" siena:isDeprecated="false">
-        <doc title="Update a tag of thing&#xA;Update a tag of thing" />
+      <method siena:requiresAuthentication="true" name="PUT" id="updateThingTag" actionName="updateThingTag" siena:isDeprecated="false">
+        <doc title="Mettre à jour l’indicateur d’une chose&#xA;Mettre à jour l’indicateur d’une chose" />
         <request>
           <representation mediaType="application/json">
             <param style="plain" name="id" path="/id" type="xs:string" />
@@ -1250,10 +1250,10 @@
     <resource path="/{connectionId}/api/tags/thing/{thingId}">
       <param style="template" name="connectionId" type="xs:string" required="true" />
       <param style="template" name="thingId" type="xs:string" required="true">
-        <doc title="Id of a thing. Cannot be empty." />
+        <doc title="ID d’une chose. Ne peut pas être vide." />
       </param>
-      <method siena:requiresAuthentication="true" name="POST" id="addThingTag" siena:isDeprecated="false">
-        <doc title="Add a tag to thing&#xA;Add a tag to thing" />
+      <method siena:requiresAuthentication="true" name="POST" id="addThingTag" actionName="addThingTag" siena:isDeprecated="false">
+        <doc title="Ajouter un indicateur à une chose&#xA;Ajouter un indicateur à une chose" />
         <request>
           <representation mediaType="application/json">
             <param style="plain" name="id" path="/id" type="xs:string" />
@@ -1268,10 +1268,10 @@
     <resource path="/{connectionId}/api/tags/{id}">
       <param style="template" name="connectionId" type="xs:string" required="true" />
       <param style="template" name="id" type="xs:string" required="true">
-        <doc title="Id of a tag. Cannot be empty." />
+        <doc title="ID d’un indicateur. Ne peut pas être vide." />
       </param>
-      <method siena:requiresAuthentication="true" name="GET" id="getThingTag" siena:isDeprecated="false">
-        <doc title="Get a tag&#xA;Get a tag" />
+      <method siena:requiresAuthentication="true" name="GET" id="getThingTag" actionName="getThingTag" siena:isDeprecated="false">
+        <doc title="Obtenir un indicateur&#xA;Obtenir un indicateur" />
         <request />
         <response>
           <representation mediaType="application/json" element="service:TagRo" />
@@ -1280,34 +1280,34 @@
     </resource>
     <resource path="/{connectionId}/api/things">
       <param style="template" name="connectionId" type="xs:string" required="true" />
-      <method siena:requiresAuthentication="true" name="GET" id="getThings" siena:isDeprecated="false">
-        <doc title="Get a list of things&#xA;Get a list of things" />
+      <method siena:requiresAuthentication="true" name="GET" id="getThings" actionName="getThings" siena:isDeprecated="false">
+        <doc title="Récupérer la liste des choses&#xA;Récupérer la liste des choses" />
         <request>
           <param style="query" name="page" type="xs:int">
-            <doc title="Number of the current page" />
+            <doc title="Numéro de la page actuelle" />
           </param>
           <param style="query" name="pageSize" type="xs:int">
-            <doc title="Number of item in the page" />
+            <doc title="Numéro de l’élément de la page" />
           </param>
           <param style="query" name="sortValues" type="xs:string">
-            <doc title="String for sort value" />
+            <doc title="Chaîne de valeur de tri" />
           </param>
           <param style="query" name="sort" type="xs:string">
-            <doc title="String for sort value" />
+            <doc title="Chaîne de valeur de tri" />
           </param>
           <param style="query" name="filter" type="xs:string">
-            <doc title="String for filter" />
+            <doc title="Chaîne du filtre" />
           </param>
           <param style="query" name="dir" type="xs:string">
-            <doc title="Sort direction (ASC/DESC)" />
+            <doc title="Sens de tri (ASC/DESC)" />
             <option value="ASC" />
             <option value="DESC" />
           </param>
           <param style="query" name="orFilter" type="xs:string">
-            <doc title="Or filter parameter" />
+            <doc title="Ou paramètre de filtre" />
           </param>
           <param style="query" name="detailed" type="xs:boolean" default="false">
-            <doc title="Boolean for detailed information." />
+            <doc title="Valeur booléenne pour plus d’informations." />
           </param>
         </request>
         <response>
@@ -1317,12 +1317,12 @@
     </resource>
     <resource path="/{connectionId}/api/things">
       <param style="template" name="connectionId" type="xs:string" required="true" />
-      <method siena:requiresAuthentication="true" name="POST" id="addThingsCsv" siena:isDeprecated="false">
-        <doc title="Import a csv file&#xA;Import a csv file" />
+      <method siena:requiresAuthentication="true" name="POST" id="addThingsCsv" actionName="addThingsCsv" siena:isDeprecated="false">
+        <doc title="Importer un fichier csv&#xA;Importer un fichier csv" />
         <request>
           <representation mediaType="multipart/form-data">
             <param style="query" name="file" type="xs:base64Binary" required="true">
-              <doc title="file" />
+              <doc title="fichier" />
             </param>
           </representation>
         </request>
@@ -1333,8 +1333,8 @@
     </resource>
     <resource path="/{connectionId}/api/things">
       <param style="template" name="connectionId" type="xs:string" required="true" />
-      <method siena:requiresAuthentication="true" name="PUT" id="associateThingsWithProduct" siena:isDeprecated="false">
-        <doc title="Associate a product to a list of things&#xA;Associate a product to a list of things" />
+      <method siena:requiresAuthentication="true" name="PUT" id="associateThingsWithProduct" actionName="associateThingsWithProduct" siena:isDeprecated="false">
+        <doc title="Associer un produit à une liste de choses&#xA;Associer un produit à une liste de choses" />
         <request>
           <representation mediaType="application/json">
             <param style="plain" name="array" path="/array" type="xs:boolean" />
@@ -1377,8 +1377,8 @@
     </resource>
     <resource path="/{connectionId}/api/things/list">
       <param style="template" name="connectionId" type="xs:string" required="true" />
-      <method siena:requiresAuthentication="true" name="POST" id="getThingList" siena:isDeprecated="false">
-        <doc title="Get the list of things&#xA;Get the list of things" />
+      <method siena:requiresAuthentication="true" name="POST" id="getThingList" actionName="getThingList" siena:isDeprecated="false">
+        <doc title="Récupérer la liste des choses&#xA;Récupérer la liste des choses" />
         <request>
           <representation mediaType="application/json">
             <param style="plain" name="thingIds" path="" type="service:getThingList_param_thingIds_def" required="true">
@@ -1394,13 +1394,13 @@
     <resource path="/{connectionId}/api/things/{id}">
       <param style="template" name="connectionId" type="xs:string" required="true" />
       <param style="template" name="id" type="xs:string" required="true">
-        <doc title="Id of a thing. Cannot be empty." />
+        <doc title="ID d’une chose. Ne peut pas être vide." />
       </param>
-      <method siena:requiresAuthentication="true" name="GET" id="getThing" siena:isDeprecated="false">
-        <doc title="Get a thing details&#xA;Get a thing details" />
+      <method siena:requiresAuthentication="true" name="GET" id="getThing" actionName="getThing" siena:isDeprecated="false">
+        <doc title="Obtenir des détails sur une chose&#xA;Obtenir des détails sur une chose" />
         <request>
           <param style="query" name="detailed" type="xs:boolean" default="false">
-            <doc title="Boolean for detailed information." />
+            <doc title="Valeur booléenne pour plus d’informations." />
           </param>
         </request>
         <response>
@@ -1411,13 +1411,13 @@
     <resource path="/{connectionId}/api/things/{id}">
       <param style="template" name="connectionId" type="xs:string" required="true" />
       <param style="template" name="id" type="xs:string" required="true">
-        <doc title="Id of a thing. Cannot be empty." />
+        <doc title="ID d’une chose. Ne peut pas être vide." />
       </param>
-      <method siena:requiresAuthentication="true" name="DELETE" id="ignoreThing" siena:isDeprecated="false">
-        <doc title="Delete a thing&#xA;Delete a thing" />
+      <method siena:requiresAuthentication="true" name="DELETE" id="ignoreThing" actionName="ignoreThing" siena:isDeprecated="false">
+        <doc title="Supprimer une chose&#xA;Supprimer une chose" />
         <request>
           <param style="query" name="force" type="xs:boolean">
-            <doc title="force" />
+            <doc title="forcer" />
           </param>
         </request>
       </method>
@@ -1425,10 +1425,10 @@
     <resource path="/{connectionId}/api/things/{id}">
       <param style="template" name="connectionId" type="xs:string" required="true" />
       <param style="template" name="id" type="xs:string" required="true">
-        <doc title="Id of a thing. Cannot be empty." />
+        <doc title="ID d’une chose. Ne peut pas être vide." />
       </param>
-      <method siena:requiresAuthentication="true" name="PUT" id="putThing" siena:isDeprecated="false">
-        <doc title="Update a thing&#xA;Update a thing" />
+      <method siena:requiresAuthentication="true" name="PUT" id="putThing" actionName="putThing" siena:isDeprecated="false">
+        <doc title="Mettre à jour une chose&#xA;Mettre à jour une chose" />
         <request>
           <representation mediaType="application/json">
             <param style="plain" name="application" path="/application" type="service:ApplicationTinyRo" required="true" />
@@ -1480,10 +1480,10 @@
     <resource path="/{connectionId}/api/things/{id}/active_model">
       <param style="template" name="connectionId" type="xs:string" required="true" />
       <param style="template" name="id" type="xs:string" required="true">
-        <doc title="Id of a thing. Cannot be empty." />
+        <doc title="ID d’une chose. Ne peut pas être vide." />
       </param>
-      <method siena:requiresAuthentication="true" name="GET" id="getThingActiveModel" siena:isDeprecated="false">
-        <doc title="Get the active model of a thing&#xA;Get the active model of a thing" />
+      <method siena:requiresAuthentication="true" name="GET" id="getThingActiveModel" actionName="getThingActiveModel" siena:isDeprecated="false">
+        <doc title="Obtenir le modèle actif d’une chose&#xA;Obtenir le modèle actif d’une chose" />
         <request />
         <response>
           <representation mediaType="application/json" element="service:ModelRo" />
@@ -1493,10 +1493,10 @@
     <resource path="/{connectionId}/api/things/{id}/custom_fields">
       <param style="template" name="connectionId" type="xs:string" required="true" />
       <param style="template" name="id" type="xs:string" required="true">
-        <doc title="Id of a thing. Cannot be empty." />
+        <doc title="ID d’une chose. Ne peut pas être vide." />
       </param>
-      <method siena:requiresAuthentication="true" name="GET" id="getCustomField" siena:isDeprecated="false">
-        <doc title="Get custom fields list&#xA;Get custom fields list" />
+      <method siena:requiresAuthentication="true" name="GET" id="getCustomField" actionName="getCustomField" siena:isDeprecated="false">
+        <doc title="Obtenir la liste des champs personnalisés&#xA;Obtenir la liste des champs personnalisés" />
         <request />
         <response>
           <representation mediaType="application/json" element="service:PageCustomFieldRo" />
@@ -1506,10 +1506,10 @@
     <resource path="/{connectionId}/api/things/{id}/custom_fields">
       <param style="template" name="connectionId" type="xs:string" required="true" />
       <param style="template" name="id" type="xs:string" required="true">
-        <doc title="Id of a thing. Cannot be empty." />
+        <doc title="ID d’une chose. Ne peut pas être vide." />
       </param>
-      <method siena:requiresAuthentication="true" name="POST" id="createCustomField" siena:isDeprecated="false">
-        <doc title="Add custom fields&#xA;Add custom fields" />
+      <method siena:requiresAuthentication="true" name="POST" id="createCustomField" actionName="createCustomField" siena:isDeprecated="false">
+        <doc title="Ajouter des champs personnalisés&#xA;Ajouter des champs personnalisés" />
         <request>
           <representation mediaType="application/json">
             <param style="plain" name="id" path="/id" type="xs:string" />
@@ -1532,10 +1532,10 @@
     <resource path="/{connectionId}/api/things/{id}/custom_fields">
       <param style="template" name="connectionId" type="xs:string" required="true" />
       <param style="template" name="id" type="xs:string" required="true">
-        <doc title="Id of a thing. Cannot be empty." />
+        <doc title="ID d’une chose. Ne peut pas être vide." />
       </param>
-      <method siena:requiresAuthentication="true" name="PUT" id="updateCustomField" siena:isDeprecated="false">
-        <doc title="Update custom fields&#xA;Update custom fields" />
+      <method siena:requiresAuthentication="true" name="PUT" id="updateCustomField" actionName="updateCustomField" siena:isDeprecated="false">
+        <doc title="Mettre à jour des champs personnalisés&#xA;Mettre à jour des champs personnalisés" />
         <request>
           <representation mediaType="application/json">
             <param style="plain" name="id" path="/id" type="xs:string" />
@@ -1558,13 +1558,13 @@
     <resource path="/{connectionId}/api/things/{id}/custom_fields/{fieldId}">
       <param style="template" name="connectionId" type="xs:string" required="true" />
       <param style="template" name="id" type="xs:string" required="true">
-        <doc title="Id of a thing. Cannot be empty." />
+        <doc title="ID d’une chose. Ne peut pas être vide." />
       </param>
       <param style="template" name="fieldId" type="xs:string" required="true">
-        <doc title="Id of a custom field. Cannot be empty." />
+        <doc title="ID d’un champ personnalisé. Ne peut pas être vide." />
       </param>
-      <method siena:requiresAuthentication="true" name="DELETE" id="deleteCustomField" siena:isDeprecated="false">
-        <doc title="Delete custom fields&#xA;Delete custom fields" />
+      <method siena:requiresAuthentication="true" name="DELETE" id="deleteCustomField" actionName="deleteCustomField" siena:isDeprecated="false">
+        <doc title="Supprimer des champs personnalisés&#xA;Supprimer des champs personnalisés" />
         <request />
         <response>
           <representation mediaType="application/json" element="service:ResponseEntity" />
@@ -1574,13 +1574,13 @@
     <resource path="/{connectionId}/api/things/{id}/custom_fields/{fieldId}/image">
       <param style="template" name="connectionId" type="xs:string" required="true" />
       <param style="template" name="id" type="xs:string" required="true">
-        <doc title="Id of a thing. Cannot be empty." />
+        <doc title="ID d’une chose. Ne peut pas être vide." />
       </param>
       <param style="template" name="fieldId" type="xs:string" required="true">
-        <doc title="Id of a custom field. Cannot be empty." />
+        <doc title="ID d’un champ personnalisé. Ne peut pas être vide." />
       </param>
-      <method siena:requiresAuthentication="true" name="GET" id="getCustomFieldImage" siena:isDeprecated="false">
-        <doc title="Get custom fields image&#xA;Get custom fields image" />
+      <method siena:requiresAuthentication="true" name="GET" id="getCustomFieldImage" actionName="getCustomFieldImage" siena:isDeprecated="false">
+        <doc title="Récupérer l’image des champs personnalisés&#xA;Récupérer l’image des champs personnalisés" />
         <request />
         <response>
           <representation mediaType="application/json" element="service:ResponseEntity" />
@@ -1590,13 +1590,13 @@
     <resource path="/{connectionId}/api/things/{id}/custom_fields/{fieldId}/image">
       <param style="template" name="connectionId" type="xs:string" required="true" />
       <param style="template" name="id" type="xs:string" required="true">
-        <doc title="Id of a thing. Cannot be empty." />
+        <doc title="ID d’une chose. Ne peut pas être vide." />
       </param>
       <param style="template" name="fieldId" type="xs:string" required="true">
-        <doc title="Id of a custom field. Cannot be empty." />
+        <doc title="ID d’un champ personnalisé. Ne peut pas être vide." />
       </param>
-      <method siena:requiresAuthentication="true" name="POST" id="postCustomFieldImage" siena:isDeprecated="false">
-        <doc title="Update custom fields image&#xA;Update custom fields image" />
+      <method siena:requiresAuthentication="true" name="POST" id="postCustomFieldImage" actionName="postCustomFieldImage" siena:isDeprecated="false">
+        <doc title="Mettre à jour l’image des champs personnalisés&#xA;Mettre à jour l’image des champs personnalisés" />
         <request>
           <representation mediaType="multipart/form-data">
             <param style="query" name="file" type="xs:base64Binary" required="true">
@@ -1612,10 +1612,10 @@
     <resource path="/{connectionId}/api/things/{id}/image">
       <param style="template" name="connectionId" type="xs:string" required="true" />
       <param style="template" name="id" type="xs:string" required="true">
-        <doc title="Id of a thing. Cannot be empty." />
+        <doc title="ID d’une chose. Ne peut pas être vide." />
       </param>
-      <method siena:requiresAuthentication="true" name="GET" id="getThingImage" siena:isDeprecated="false">
-        <doc title="Get the picture of the thing&#xA;Get the picture of the thing" />
+      <method siena:requiresAuthentication="true" name="GET" id="getThingImage" actionName="getThingImage" siena:isDeprecated="false">
+        <doc title="Récupérer l’image de la chose&#xA;Récupérer l’image de la chose" />
         <request />
         <response>
           <representation mediaType="application/json" element="service:ResponseEntity" />
@@ -1625,10 +1625,10 @@
     <resource path="/{connectionId}/api/things/{id}/last_measurements">
       <param style="template" name="connectionId" type="xs:string" required="true" />
       <param style="template" name="id" type="xs:string" required="true">
-        <doc title="Id of a thing. Cannot be empty." />
+        <doc title="ID d’une chose. Ne peut pas être vide." />
       </param>
-      <method siena:requiresAuthentication="true" name="GET" id="getLastMeasures" siena:isDeprecated="false">
-        <doc title="Last measurements of a thing&#xA;Last measurements of a thing" />
+      <method siena:requiresAuthentication="true" name="GET" id="getLastMeasures" actionName="getLastMeasures" siena:isDeprecated="false">
+        <doc title="Dernières mesures d’une chose&#xA;Dernières mesures d’une chose" />
         <request />
         <response>
           <representation mediaType="application/json" element="service:getLastMeasures_responses_200_def" />
@@ -1638,10 +1638,10 @@
     <resource path="/{connectionId}/api/things/{id}/last_message">
       <param style="template" name="connectionId" type="xs:string" required="true" />
       <param style="template" name="id" type="xs:string" required="true">
-        <doc title="Id of a thing. Cannot be empty." />
+        <doc title="ID d’une chose. Ne peut pas être vide." />
       </param>
-      <method siena:requiresAuthentication="true" name="GET" id="getLastMessage" siena:isDeprecated="false">
-        <doc title="Last message of a thing&#xA;Last message of a thing" />
+      <method siena:requiresAuthentication="true" name="GET" id="getLastMessage" actionName="getLastMessage" siena:isDeprecated="false">
+        <doc title="Dernier message d’une chose&#xA;Dernier message d’une chose" />
         <request />
         <response>
           <representation mediaType="application/json" element="service:MessageTinyRo" />
@@ -1651,36 +1651,36 @@
     <resource path="/{connectionId}/api/things/{id}/measures">
       <param style="template" name="connectionId" type="xs:string" required="true" />
       <param style="template" name="id" type="xs:string" required="true">
-        <doc title="Id of a thing. Cannot be empty." />
+        <doc title="ID d’une chose. Ne peut pas être vide." />
       </param>
-      <method siena:requiresAuthentication="true" name="GET" id="getThingMeasures" siena:isDeprecated="false">
-        <doc title="Get a list of measures of a thing&#xA;Get a list of measures of a thing" />
+      <method siena:requiresAuthentication="true" name="GET" id="getThingMeasures" actionName="getThingMeasures" siena:isDeprecated="false">
+        <doc title="Récupérer la liste de mesures d’une chose&#xA;Récupérer la liste de mesures d’une chose" />
         <request>
           <param style="query" name="detailed" type="xs:boolean" default="false">
-            <doc title="Boolean for detailed information." />
+            <doc title="Valeur booléenne pour plus d’informations." />
           </param>
           <param style="query" name="page" type="xs:int">
-            <doc title="Number of the current page" />
+            <doc title="Numéro de la page actuelle" />
           </param>
           <param style="query" name="pageSize" type="xs:int">
-            <doc title="Number of item in the page" />
+            <doc title="Numéro de l’élément de la page" />
           </param>
           <param style="query" name="sortValues" type="xs:string">
-            <doc title="String for sort value" />
+            <doc title="Chaîne de valeur de tri" />
           </param>
           <param style="query" name="sort" type="xs:string">
-            <doc title="String for sort value" />
+            <doc title="Chaîne de valeur de tri" />
           </param>
           <param style="query" name="filter" type="xs:string">
-            <doc title="String for filter" />
+            <doc title="Chaîne du filtre" />
           </param>
           <param style="query" name="dir" type="xs:string">
-            <doc title="Sort direction (ASC/DESC)" />
+            <doc title="Sens de tri (ASC/DESC)" />
             <option value="ASC" />
             <option value="DESC" />
           </param>
           <param style="query" name="orFilter" type="xs:string">
-            <doc title="Or filter parameter" />
+            <doc title="Ou paramètre de filtre" />
           </param>
         </request>
         <response>
@@ -1691,33 +1691,33 @@
     <resource path="/{connectionId}/api/things/{id}/messages">
       <param style="template" name="connectionId" type="xs:string" required="true" />
       <param style="template" name="id" type="xs:string" required="true">
-        <doc title="Id of a thing. Cannot be empty." />
+        <doc title="ID d’une chose. Ne peut pas être vide." />
       </param>
-      <method siena:requiresAuthentication="true" name="GET" id="getThingMessages" siena:isDeprecated="false">
-        <doc title="Get a list of messages of a thing&#xA;Get a list of messages of a thing" />
+      <method siena:requiresAuthentication="true" name="GET" id="getThingMessages" actionName="getThingMessages" siena:isDeprecated="false">
+        <doc title="Récupérer la liste de messages d’une chose&#xA;Récupérer la liste de messages d’une chose" />
         <request>
           <param style="query" name="page" type="xs:int">
-            <doc title="Number of the current page" />
+            <doc title="Numéro de la page actuelle" />
           </param>
           <param style="query" name="pageSize" type="xs:int">
-            <doc title="Number of item in the page" />
+            <doc title="Numéro de l’élément de la page" />
           </param>
           <param style="query" name="sortValues" type="xs:string">
-            <doc title="String for sort value" />
+            <doc title="Chaîne de valeur de tri" />
           </param>
           <param style="query" name="sort" type="xs:string">
-            <doc title="String for sort value" />
+            <doc title="Chaîne de valeur de tri" />
           </param>
           <param style="query" name="filter" type="xs:string">
-            <doc title="String for filter" />
+            <doc title="Chaîne du filtre" />
           </param>
           <param style="query" name="dir" type="xs:string">
-            <doc title="Sort direction (ASC/DESC)" />
+            <doc title="Sens de tri (ASC/DESC)" />
             <option value="ASC" />
             <option value="DESC" />
           </param>
           <param style="query" name="orFilter" type="xs:string">
-            <doc title="Or filter parameter" />
+            <doc title="Ou paramètre de filtre" />
           </param>
         </request>
         <response>
@@ -1728,20 +1728,20 @@
     <resource path="/{connectionId}/api/things/{id}/messages">
       <param style="template" name="connectionId" type="xs:string" required="true" />
       <param style="template" name="id" type="xs:string" required="true">
-        <doc title="Id of a thing. Cannot be empty." />
+        <doc title="ID d’une chose. Ne peut pas être vide." />
       </param>
-      <method siena:requiresAuthentication="true" name="DELETE" id="deleteThingMessages" siena:isDeprecated="false">
-        <doc title="Delete all measures for a thing&#xA;Delete all measures for a thing" />
+      <method siena:requiresAuthentication="true" name="DELETE" id="deleteThingMessages" actionName="deleteThingMessages" siena:isDeprecated="false">
+        <doc title="Supprimer toutes les mesures pour une chose&#xA;Supprimer toutes les mesures pour une chose" />
         <request />
       </method>
     </resource>
     <resource path="/{connectionId}/api/things/{id}/messages">
       <param style="template" name="connectionId" type="xs:string" required="true" />
       <param style="template" name="id" type="xs:string" required="true">
-        <doc title="Id of a thing. Cannot be empty." />
+        <doc title="ID d’une chose. Ne peut pas être vide." />
       </param>
-      <method siena:requiresAuthentication="true" name="POST" id="createThingMessages" siena:isDeprecated="false">
-        <doc title="All messages of a thing&#xA;All messages of a thing" />
+      <method siena:requiresAuthentication="true" name="POST" id="createThingMessages" actionName="createThingMessages" siena:isDeprecated="false">
+        <doc title="Tous les messages d’une chose&#xA;Tous les messages d’une chose" />
         <request>
           <representation mediaType="application/json">
             <param style="plain" name="body" path="/body" type="xs:string" required="true" />
@@ -1778,10 +1778,10 @@
     <resource path="/{connectionId}/api/things/{id}/model">
       <param style="template" name="connectionId" type="xs:string" required="true" />
       <param style="template" name="id" type="xs:string" required="true">
-        <doc title="Id of a thing. Cannot be empty." />
+        <doc title="ID d’une chose. Ne peut pas être vide." />
       </param>
-      <method siena:requiresAuthentication="true" name="GET" id="getThingModel" siena:isDeprecated="false">
-        <doc title="Get the active model of a thing&#xA;Get the active model of a thing" />
+      <method siena:requiresAuthentication="true" name="GET" id="getThingModel" actionName="getThingModel" siena:isDeprecated="false">
+        <doc title="Obtenir le modèle actif d’une chose&#xA;Obtenir le modèle actif d’une chose" />
         <request />
         <response>
           <representation mediaType="application/json" element="service:ModelRo" />
@@ -1791,10 +1791,10 @@
     <resource path="/{connectionId}/api/things/{id}/operations">
       <param style="template" name="connectionId" type="xs:string" required="true" />
       <param style="template" name="id" type="xs:string" required="true">
-        <doc title="Id of a thing. Cannot be empty." />
+        <doc title="ID d’une chose. Ne peut pas être vide." />
       </param>
-      <method siena:requiresAuthentication="true" name="GET" id="getThingOperations" siena:isDeprecated="false">
-        <doc title="Get the list of available operations&#xA;Get the list of available operations" />
+      <method siena:requiresAuthentication="true" name="GET" id="getThingOperations" actionName="getThingOperations" siena:isDeprecated="false">
+        <doc title="Récupérer la liste des opérations disponibles&#xA;Récupérer la liste des opérations disponibles" />
         <request />
         <response>
           <representation mediaType="application/json" element="service:PageOperationRo" />
@@ -1804,13 +1804,13 @@
     <resource path="/{connectionId}/api/things/{id}/operations/{operationId}">
       <param style="template" name="connectionId" type="xs:string" required="true" />
       <param style="template" name="id" type="xs:string" required="true">
-        <doc title="Id of a thing. Cannot be empty." />
+        <doc title="ID d’une chose. Ne peut pas être vide." />
       </param>
       <param style="template" name="operationId" type="xs:string" required="true">
-        <doc title="Id of an operation. Cannot be empty." />
+        <doc title="ID d’une opération. Ne peut pas être vide." />
       </param>
-      <method siena:requiresAuthentication="true" name="POST" id="executeThingOperation" siena:isDeprecated="false">
-        <doc title="Execute an operation on a thing&#xA;Execute an operation on a thing" />
+      <method siena:requiresAuthentication="true" name="POST" id="executeThingOperation" actionName="executeThingOperation" siena:isDeprecated="false">
+        <doc title="Exécuter une opération sur une chose&#xA;Exécuter une opération sur une chose" />
         <request>
           <representation mediaType="application/json">
             <param style="plain" name="array" path="/array" type="xs:boolean" />
@@ -1854,10 +1854,10 @@
     <resource path="/{connectionId}/api/things/{id}/positions">
       <param style="template" name="connectionId" type="xs:string" required="true" />
       <param style="template" name="id" type="xs:string" required="true">
-        <doc title="Id of a thing. Cannot be empty." />
+        <doc title="ID d’une chose. Ne peut pas être vide." />
       </param>
-      <method siena:requiresAuthentication="true" name="PUT" id="updateThingFixedPosition" siena:isDeprecated="false">
-        <doc title="Update position of a thing&#xA;Update position of a thing" />
+      <method siena:requiresAuthentication="true" name="PUT" id="updateThingFixedPosition" actionName="updateThingFixedPosition" siena:isDeprecated="false">
+        <doc title="Mettre à jour une position d’une chose&#xA;Mettre à jour une position d’une chose" />
         <request>
           <representation mediaType="application/json">
             <param style="plain" name="customFields" path="/customFields" type="service:ThingRo_customFields_def" />
@@ -1903,10 +1903,10 @@
     <resource path="/{connectionId}/api/things/{id}/product">
       <param style="template" name="connectionId" type="xs:string" required="true" />
       <param style="template" name="id" type="xs:string" required="true">
-        <doc title="Id of a thing. Cannot be empty." />
+        <doc title="ID d’une chose. Ne peut pas être vide." />
       </param>
-      <method siena:requiresAuthentication="true" name="GET" id="getThingProduct" siena:isDeprecated="false">
-        <doc title="Get the product of a thing&#xA;Get the product of a thing" />
+      <method siena:requiresAuthentication="true" name="GET" id="getThingProduct" actionName="getThingProduct" siena:isDeprecated="false">
+        <doc title="Récupérer le produit d’une chose&#xA;Récupérer le produit d’une chose" />
         <request />
         <response>
           <representation mediaType="application/json" element="service:ProductRo" />
@@ -1916,10 +1916,10 @@
     <resource path="/{connectionId}/api/things/{id}/product">
       <param style="template" name="connectionId" type="xs:string" required="true" />
       <param style="template" name="id" type="xs:string" required="true">
-        <doc title="Id of a thing. Cannot be empty." />
+        <doc title="ID d’une chose. Ne peut pas être vide." />
       </param>
-      <method siena:requiresAuthentication="true" name="DELETE" id="dissociateThingProduct" siena:isDeprecated="false">
-        <doc title="Dissociate the thing from the product&#xA;Dissociate the thing from the product" />
+      <method siena:requiresAuthentication="true" name="DELETE" id="dissociateThingProduct" actionName="dissociateThingProduct" siena:isDeprecated="false">
+        <doc title="Dissocier la chose du produit&#xA;Dissocier la chose du produit" />
         <request />
         <response>
           <representation mediaType="application/json" element="service:SingleThingRo" />
@@ -1929,10 +1929,10 @@
     <resource path="/{connectionId}/api/things/{id}/product">
       <param style="template" name="connectionId" type="xs:string" required="true" />
       <param style="template" name="id" type="xs:string" required="true">
-        <doc title="Id of a thing. Cannot be empty." />
+        <doc title="ID d’une chose. Ne peut pas être vide." />
       </param>
-      <method siena:requiresAuthentication="true" name="PUT" id="associateThingProduct" siena:isDeprecated="false">
-        <doc title="Associate a product to a thing&#xA;Associate a product to a thing" />
+      <method siena:requiresAuthentication="true" name="PUT" id="associateThingProduct" actionName="associateThingProduct" siena:isDeprecated="false">
+        <doc title="Associer un produit à une chose&#xA;Associer un produit à une chose" />
         <request>
           <representation mediaType="application/json">
             <param style="plain" name="certification" path="/certification" type="xs:string" />
@@ -1965,10 +1965,10 @@
     <resource path="/{connectionId}/api/things/{id}/related_flows">
       <param style="template" name="connectionId" type="xs:string" required="true" />
       <param style="template" name="id" type="xs:string" required="true">
-        <doc title="Id of a thing. Cannot be empty." />
+        <doc title="ID d’une chose. Ne peut pas être vide." />
       </param>
-      <method siena:requiresAuthentication="true" name="GET" id="getFlowsRelatedToThing" siena:isDeprecated="false">
-        <doc title="Related flows of a thing&#xA;Related flows of a thing" />
+      <method siena:requiresAuthentication="true" name="GET" id="getFlowsRelatedToThing" actionName="getFlowsRelatedToThing" siena:isDeprecated="false">
+        <doc title="Flux connexes d’une chose&#xA;Flux connexes d’une chose" />
         <request />
         <response>
           <representation mediaType="application/json" element="service:PageFlowRo" />
@@ -1978,10 +1978,10 @@
     <resource path="/{connectionId}/api/things/{id}/tags">
       <param style="template" name="connectionId" type="xs:string" required="true" />
       <param style="template" name="id" type="xs:string" required="true">
-        <doc title="Id of a thing. Cannot be empty." />
+        <doc title="ID d’une chose. Ne peut pas être vide." />
       </param>
-      <method siena:requiresAuthentication="true" name="GET" id="getThingTags" siena:isDeprecated="false">
-        <doc title="Get thing tags&#xA;Get thing tags" />
+      <method siena:requiresAuthentication="true" name="GET" id="getThingTags" actionName="getThingTags" siena:isDeprecated="false">
+        <doc title="Récupérer les indicateurs d’une chose&#xA;Récupérer les indicateurs d’une chose" />
         <request />
         <response>
           <representation mediaType="application/json" element="service:PageThingTagRo" />
@@ -1990,37 +1990,37 @@
     </resource>
     <resource path="/{connectionId}/stats/avg">
       <param style="template" name="connectionId" type="xs:string" required="true" />
-      <method siena:requiresAuthentication="true" name="GET" id="getStatsAvg" siena:isDeprecated="false">
-        <doc title="Get stats average&#xA;Get stats average" />
+      <method siena:requiresAuthentication="true" name="GET" id="getStatsAvg" actionName="getStatsAvg" siena:isDeprecated="false">
+        <doc title="Récupérer la moyenne des statistiques&#xA;Récupérer la moyenne des statistiques" />
         <request>
           <param style="query" name="page" type="xs:int">
-            <doc title="Number of the current page" />
+            <doc title="Numéro de la page actuelle" />
           </param>
           <param style="query" name="pageSize" type="xs:int">
-            <doc title="Number of item in the page" />
+            <doc title="Numéro de l’élément de la page" />
           </param>
           <param style="query" name="sortValues" type="xs:string">
-            <doc title="String for sort value" />
+            <doc title="Chaîne de valeur de tri" />
           </param>
           <param style="query" name="sort" type="xs:string">
-            <doc title="String for sort value" />
+            <doc title="Chaîne de valeur de tri" />
           </param>
           <param style="query" name="filter" type="xs:string">
-            <doc title="String for filter" />
+            <doc title="Chaîne du filtre" />
           </param>
           <param style="query" name="dir" type="xs:string">
-            <doc title="Sort direction (ASC/DESC)" />
+            <doc title="Sens de tri (ASC/DESC)" />
             <option value="ASC" />
             <option value="DESC" />
           </param>
           <param style="query" name="orFilter" type="xs:string">
-            <doc title="Or filter parameter" />
+            <doc title="Ou paramètre de filtre" />
           </param>
           <param style="query" name="start" type="xs:long">
-            <doc title="start" />
+            <doc title="début" />
           </param>
           <param style="query" name="end" type="xs:long">
-            <doc title="end" />
+            <doc title="fin" />
           </param>
         </request>
         <response>
@@ -2030,37 +2030,37 @@
     </resource>
     <resource path="/{connectionId}/stats/count">
       <param style="template" name="connectionId" type="xs:string" required="true" />
-      <method siena:requiresAuthentication="true" name="GET" id="getStatsCount" siena:isDeprecated="false">
-        <doc title="Get stats count&#xA;Get stats count" />
+      <method siena:requiresAuthentication="true" name="GET" id="getStatsCount" actionName="getStatsCount" siena:isDeprecated="false">
+        <doc title="Récupérer le nombre de statistiques&#xA;Récupérer le nombre de statistiques" />
         <request>
           <param style="query" name="page" type="xs:int">
-            <doc title="Number of the current page" />
+            <doc title="Numéro de la page actuelle" />
           </param>
           <param style="query" name="pageSize" type="xs:int">
-            <doc title="Number of item in the page" />
+            <doc title="Numéro de l’élément de la page" />
           </param>
           <param style="query" name="sortValues" type="xs:string">
-            <doc title="String for sort value" />
+            <doc title="Chaîne de valeur de tri" />
           </param>
           <param style="query" name="sort" type="xs:string">
-            <doc title="String for sort value" />
+            <doc title="Chaîne de valeur de tri" />
           </param>
           <param style="query" name="filter" type="xs:string">
-            <doc title="String for filter" />
+            <doc title="Chaîne du filtre" />
           </param>
           <param style="query" name="dir" type="xs:string">
-            <doc title="Sort direction (ASC/DESC)" />
+            <doc title="Sens de tri (ASC/DESC)" />
             <option value="ASC" />
             <option value="DESC" />
           </param>
           <param style="query" name="orFilter" type="xs:string">
-            <doc title="Or filter parameter" />
+            <doc title="Ou paramètre de filtre" />
           </param>
           <param style="query" name="start" type="xs:long">
-            <doc title="start" />
+            <doc title="début" />
           </param>
           <param style="query" name="end" type="xs:long">
-            <doc title="end" />
+            <doc title="fin" />
           </param>
         </request>
         <response>
@@ -2070,31 +2070,31 @@
     </resource>
     <resource path="/{connectionId}/stats/last">
       <param style="template" name="connectionId" type="xs:string" required="true" />
-      <method siena:requiresAuthentication="true" name="GET" id="getStatsLast" siena:isDeprecated="false">
-        <doc title="Get stats last&#xA;Get stats last" />
+      <method siena:requiresAuthentication="true" name="GET" id="getStatsLast" actionName="getStatsLast" siena:isDeprecated="false">
+        <doc title="Récupérer les dernières statistiques&#xA;Récupérer les dernières statistiques" />
         <request>
           <param style="query" name="page" type="xs:int">
-            <doc title="Number of the current page" />
+            <doc title="Numéro de la page actuelle" />
           </param>
           <param style="query" name="pageSize" type="xs:int">
-            <doc title="Number of item in the page" />
+            <doc title="Numéro de l’élément de la page" />
           </param>
           <param style="query" name="sortValues" type="xs:string">
-            <doc title="String for sort value" />
+            <doc title="Chaîne de valeur de tri" />
           </param>
           <param style="query" name="sort" type="xs:string">
-            <doc title="String for sort value" />
+            <doc title="Chaîne de valeur de tri" />
           </param>
           <param style="query" name="filter" type="xs:string">
-            <doc title="String for filter" />
+            <doc title="Chaîne du filtre" />
           </param>
           <param style="query" name="dir" type="xs:string">
-            <doc title="Sort direction (ASC/DESC)" />
+            <doc title="Sens de tri (ASC/DESC)" />
             <option value="ASC" />
             <option value="DESC" />
           </param>
           <param style="query" name="orFilter" type="xs:string">
-            <doc title="Or filter parameter" />
+            <doc title="Ou paramètre de filtre" />
           </param>
         </request>
         <response>
@@ -2105,33 +2105,33 @@
     <resource path="/{connectionId}/stats/last/things/{thingId}">
       <param style="template" name="connectionId" type="xs:string" required="true" />
       <param style="template" name="thingId" type="xs:string" required="true">
-        <doc title="Id of a thing. Cannot be empty" />
+        <doc title="ID d’une chose. Ne peut pas être vide" />
       </param>
-      <method siena:requiresAuthentication="true" name="GET" id="getThingStatsLast" siena:isDeprecated="false">
-        <doc title="Get stats last&#xA;Get stats last" />
+      <method siena:requiresAuthentication="true" name="GET" id="getThingStatsLast" actionName="getThingStatsLast" siena:isDeprecated="false">
+        <doc title="Récupérer les dernières statistiques&#xA;Récupérer les dernières statistiques" />
         <request>
           <param style="query" name="page" type="xs:int">
-            <doc title="Number of the current page" />
+            <doc title="Numéro de la page actuelle" />
           </param>
           <param style="query" name="pageSize" type="xs:int">
-            <doc title="Number of item in the page" />
+            <doc title="Numéro de l’élément de la page" />
           </param>
           <param style="query" name="sortValues" type="xs:string">
-            <doc title="String for sort value" />
+            <doc title="Chaîne de valeur de tri" />
           </param>
           <param style="query" name="sort" type="xs:string">
-            <doc title="String for sort value" />
+            <doc title="Chaîne de valeur de tri" />
           </param>
           <param style="query" name="filter" type="xs:string">
-            <doc title="String for filter" />
+            <doc title="Chaîne du filtre" />
           </param>
           <param style="query" name="dir" type="xs:string">
-            <doc title="Sort direction (ASC/DESC)" />
+            <doc title="Sens de tri (ASC/DESC)" />
             <option value="ASC" />
             <option value="DESC" />
           </param>
           <param style="query" name="orFilter" type="xs:string">
-            <doc title="Or filter parameter" />
+            <doc title="Ou paramètre de filtre" />
           </param>
         </request>
         <response>
@@ -2141,37 +2141,37 @@
     </resource>
     <resource path="/{connectionId}/stats/max">
       <param style="template" name="connectionId" type="xs:string" required="true" />
-      <method siena:requiresAuthentication="true" name="GET" id="getStatsMax" siena:isDeprecated="false">
-        <doc title="Get stats max&#xA;Get stats max" />
+      <method siena:requiresAuthentication="true" name="GET" id="getStatsMax" actionName="getStatsMax" siena:isDeprecated="false">
+        <doc title="Récupérer max. de statistiques&#xA;Récupérer max. de statistiques" />
         <request>
           <param style="query" name="page" type="xs:int">
-            <doc title="Number of the current page" />
+            <doc title="Numéro de la page actuelle" />
           </param>
           <param style="query" name="pageSize" type="xs:int">
-            <doc title="Number of item in the page" />
+            <doc title="Numéro de l’élément de la page" />
           </param>
           <param style="query" name="sortValues" type="xs:string">
-            <doc title="String for sort value" />
+            <doc title="Chaîne de valeur de tri" />
           </param>
           <param style="query" name="sort" type="xs:string">
-            <doc title="String for sort value" />
+            <doc title="Chaîne de valeur de tri" />
           </param>
           <param style="query" name="filter" type="xs:string">
-            <doc title="String for filter" />
+            <doc title="Chaîne du filtre" />
           </param>
           <param style="query" name="dir" type="xs:string">
-            <doc title="Sort direction (ASC/DESC)" />
+            <doc title="Sens de tri (ASC/DESC)" />
             <option value="ASC" />
             <option value="DESC" />
           </param>
           <param style="query" name="orFilter" type="xs:string">
-            <doc title="Or filter parameter" />
+            <doc title="Ou paramètre de filtre" />
           </param>
           <param style="query" name="start" type="xs:long">
-            <doc title="start" />
+            <doc title="début" />
           </param>
           <param style="query" name="end" type="xs:long">
-            <doc title="end" />
+            <doc title="fin" />
           </param>
         </request>
         <response>
@@ -2181,43 +2181,43 @@
     </resource>
     <resource path="/{connectionId}/stats/measurements">
       <param style="template" name="connectionId" type="xs:string" required="true" />
-      <method siena:requiresAuthentication="true" name="GET" id="getStatsMeasurements" siena:isDeprecated="false">
-        <doc title="Get stats measurements&#xA;Get stats measurements" />
+      <method siena:requiresAuthentication="true" name="GET" id="getStatsMeasurements" actionName="getStatsMeasurements" siena:isDeprecated="false">
+        <doc title="Récupérer des mesures des statistiques&#xA;Récupérer des mesures des statistiques" />
         <request>
           <param style="query" name="page" type="xs:int">
-            <doc title="Number of the current page" />
+            <doc title="Numéro de la page actuelle" />
           </param>
           <param style="query" name="pageSize" type="xs:int">
-            <doc title="Number of item in the page" />
+            <doc title="Numéro de l’élément de la page" />
           </param>
           <param style="query" name="sortValues" type="xs:string">
-            <doc title="String for sort value" />
+            <doc title="Chaîne de valeur de tri" />
           </param>
           <param style="query" name="sort" type="xs:string">
-            <doc title="String for sort value" />
+            <doc title="Chaîne de valeur de tri" />
           </param>
           <param style="query" name="filter" type="xs:string">
-            <doc title="String for filter" />
+            <doc title="Chaîne du filtre" />
           </param>
           <param style="query" name="dir" type="xs:string">
-            <doc title="Sort direction (ASC/DESC)" />
+            <doc title="Sens de tri (ASC/DESC)" />
             <option value="ASC" />
             <option value="DESC" />
           </param>
           <param style="query" name="orFilter" type="xs:string">
-            <doc title="Or filter parameter" />
+            <doc title="Ou paramètre de filtre" />
           </param>
           <param style="query" name="time" type="xs:int">
-            <doc title="time" />
+            <doc title="heure" />
           </param>
           <param style="query" name="interval" type="xs:string">
-            <doc title="interval" />
+            <doc title="intervalle" />
           </param>
           <param style="query" name="start" type="xs:long" required="true">
-            <doc title="start" />
+            <doc title="début" />
           </param>
           <param style="query" name="end" type="xs:long" required="true">
-            <doc title="end" />
+            <doc title="fin" />
           </param>
         </request>
         <response>
@@ -2227,37 +2227,37 @@
     </resource>
     <resource path="/{connectionId}/stats/min">
       <param style="template" name="connectionId" type="xs:string" required="true" />
-      <method siena:requiresAuthentication="true" name="GET" id="getStatsMin" siena:isDeprecated="false">
-        <doc title="Get stats min&#xA;Get stats min" />
+      <method siena:requiresAuthentication="true" name="GET" id="getStatsMin" actionName="getStatsMin" siena:isDeprecated="false">
+        <doc title="Récupérer min. de statistiques&#xA;Récupérer min. de statistiques" />
         <request>
           <param style="query" name="page" type="xs:int">
-            <doc title="Number of the current page" />
+            <doc title="Numéro de la page actuelle" />
           </param>
           <param style="query" name="pageSize" type="xs:int">
-            <doc title="Number of item in the page" />
+            <doc title="Numéro de l’élément de la page" />
           </param>
           <param style="query" name="sortValues" type="xs:string">
-            <doc title="String for sort value" />
+            <doc title="Chaîne de valeur de tri" />
           </param>
           <param style="query" name="sort" type="xs:string">
-            <doc title="String for sort value" />
+            <doc title="Chaîne de valeur de tri" />
           </param>
           <param style="query" name="filter" type="xs:string">
-            <doc title="String for filter" />
+            <doc title="Chaîne du filtre" />
           </param>
           <param style="query" name="dir" type="xs:string">
-            <doc title="Sort direction (ASC/DESC)" />
+            <doc title="Sens de tri (ASC/DESC)" />
             <option value="ASC" />
             <option value="DESC" />
           </param>
           <param style="query" name="orFilter" type="xs:string">
-            <doc title="Or filter parameter" />
+            <doc title="Ou paramètre de filtre" />
           </param>
           <param style="query" name="start" type="xs:long">
-            <doc title="start" />
+            <doc title="début" />
           </param>
           <param style="query" name="end" type="xs:long">
-            <doc title="end" />
+            <doc title="fin" />
           </param>
         </request>
         <response>
@@ -2267,40 +2267,40 @@
     </resource>
     <resource path="/{connectionId}/stats/repartition">
       <param style="template" name="connectionId" type="xs:string" required="true" />
-      <method siena:requiresAuthentication="true" name="GET" id="getStatsRepartition" siena:isDeprecated="false">
-        <doc title="Get stats repartition&#xA;Get stats repartition" />
+      <method siena:requiresAuthentication="true" name="GET" id="getStatsRepartition" actionName="getStatsRepartition" siena:isDeprecated="false">
+        <doc title="Récupérer la répartition des statistiques&#xA;Récupérer la répartition des statistiques" />
         <request>
           <param style="query" name="attribute" type="xs:string" required="true">
-            <doc title="attribute" />
+            <doc title="attribut" />
           </param>
           <param style="query" name="page" type="xs:int">
-            <doc title="Number of the current page" />
+            <doc title="Numéro de la page actuelle" />
           </param>
           <param style="query" name="pageSize" type="xs:int">
-            <doc title="Number of item in the page" />
+            <doc title="Numéro de l’élément de la page" />
           </param>
           <param style="query" name="sortValues" type="xs:string">
-            <doc title="String for sort value" />
+            <doc title="Chaîne de valeur de tri" />
           </param>
           <param style="query" name="sort" type="xs:string">
-            <doc title="String for sort value" />
+            <doc title="Chaîne de valeur de tri" />
           </param>
           <param style="query" name="filter" type="xs:string">
-            <doc title="String for filter" />
+            <doc title="Chaîne du filtre" />
           </param>
           <param style="query" name="dir" type="xs:string">
-            <doc title="Sort direction (ASC/DESC)" />
+            <doc title="Sens de tri (ASC/DESC)" />
             <option value="ASC" />
             <option value="DESC" />
           </param>
           <param style="query" name="orFilter" type="xs:string">
-            <doc title="Or filter parameter" />
+            <doc title="Ou paramètre de filtre" />
           </param>
           <param style="query" name="start" type="xs:long">
-            <doc title="start" />
+            <doc title="début" />
           </param>
           <param style="query" name="end" type="xs:long">
-            <doc title="end" />
+            <doc title="fin" />
           </param>
         </request>
         <response>
@@ -2310,43 +2310,43 @@
     </resource>
     <resource path="/{connectionId}/stats/sum">
       <param style="template" name="connectionId" type="xs:string" required="true" />
-      <method siena:requiresAuthentication="true" name="GET" id="getStatsSum" siena:isDeprecated="false">
-        <doc title="Get stats sum&#xA;Get stats sum" />
+      <method siena:requiresAuthentication="true" name="GET" id="getStatsSum" actionName="getStatsSum" siena:isDeprecated="false">
+        <doc title="Récupérer la somme des statistiques&#xA;Récupérer la somme des statistiques" />
         <request>
           <param style="query" name="page" type="xs:int">
-            <doc title="Number of the current page" />
+            <doc title="Numéro de la page actuelle" />
           </param>
           <param style="query" name="pageSize" type="xs:int">
-            <doc title="Number of item in the page" />
+            <doc title="Numéro de l’élément de la page" />
           </param>
           <param style="query" name="sortValues" type="xs:string">
-            <doc title="String for sort value" />
+            <doc title="Chaîne de valeur de tri" />
           </param>
           <param style="query" name="sort" type="xs:string">
-            <doc title="String for sort value" />
+            <doc title="Chaîne de valeur de tri" />
           </param>
           <param style="query" name="filter" type="xs:string">
-            <doc title="String for filter" />
+            <doc title="Chaîne du filtre" />
           </param>
           <param style="query" name="dir" type="xs:string">
-            <doc title="Sort direction (ASC/DESC)" />
+            <doc title="Sens de tri (ASC/DESC)" />
             <option value="ASC" />
             <option value="DESC" />
           </param>
           <param style="query" name="orFilter" type="xs:string">
-            <doc title="Or filter parameter" />
+            <doc title="Ou paramètre de filtre" />
           </param>
           <param style="query" name="time" type="xs:int">
-            <doc title="time" />
+            <doc title="heure" />
           </param>
           <param style="query" name="interval" type="xs:string">
-            <doc title="interval" />
+            <doc title="intervalle" />
           </param>
           <param style="query" name="start" type="xs:long" required="true">
-            <doc title="start" />
+            <doc title="début" />
           </param>
           <param style="query" name="end" type="xs:long" required="true">
-            <doc title="end" />
+            <doc title="fin" />
           </param>
         </request>
         <response>

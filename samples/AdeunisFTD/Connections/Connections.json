@@ -1,16 +1,13 @@
 {
-  "afdbf7f1-ff32-4402-9fc1-f44d03e313a0": {
+  "04a17955-c041-4f0c-83ca-3fcda12d6726": {
     "connectionParameters": {
       "host": "mypower-132918.azurewebsites.net",
       "sku": "Enterprise"
     },
     "connectionRef": {
-      "apiTier": "Premium",
       "displayName": "Pilot Things",
       "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1539/1.0.1539.2620/pilotthings/icon.png",
-      "id": "/providers/microsoft.powerapps/apis/shared_pilotthings",
-      "parameterHints": {},
-      "parameterHintsV2": {}
+      "id": "/providers/microsoft.powerapps/apis/shared_pilotthings"
     },
     "datasets": {},
     "dataSources": [
@@ -18,7 +15,7 @@
     ],
     "dependencies": {},
     "dependents": [],
-    "id": "afdbf7f1-ff32-4402-9fc1-f44d03e313a0"
+    "id": "04a17955-c041-4f0c-83ca-3fcda12d6726"
   },
   "cfae01a3-bf73-4979-a9df-bc1f4b6b4daa": {
     "connectionParameters": {
