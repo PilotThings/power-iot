@@ -98,7 +98,7 @@
     "UserLocale": "fr-FR"
   },
   "ScreenOrder": [
-    "FTD details",
-    "DeviceList"
+    "DeviceList",
+    "FTD details"
   ]
 }

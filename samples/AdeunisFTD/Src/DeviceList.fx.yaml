@@ -6,6 +6,7 @@
         Fill: =RGBA(0, 134, 208, 1)
         Height: =64
         Width: =Parent.Width
+        Y: =64
         ZIndex: =1
 
     Title1 As label:
@@ -14,10 +15,11 @@
         PaddingRight: =10
         Text: ="Things list"
         Width: =Parent.Width
+        Y: =64
         ZIndex: =2
 
     "galThingsList As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
-        Height: =Parent.Height - galThingsList.Y
+        Height: =647
         Items: |
             =Filter(
                 PilotThings.getThings({detailed:true}).data,
@@ -25,27 +27,10 @@
             )
         Layout: =Layout.Vertical
         TemplatePadding: =0
-        TemplateSize: =Min(160, Self.Height - 60)
+        TemplateSize: =91
         Width: =Parent.Width
-        Y: =64
+        Y: =120
         ZIndex: =3
-
-        Title2 As label:
-            FontWeight: =FontWeight.Normal
-            Height: =38
-            OnSelect: =Select(Parent)
-            PaddingBottom: =0
-            PaddingLeft: =0
-            PaddingRight: =0
-            PaddingTop: =0
-            Size: =16
-            Text: |-
-                ="Things Id :"
-            VerticalAlign: =VerticalAlign.Top
-            Width: =127
-            X: =21
-            Y: =60
-            ZIndex: =2
 
         Subtitle1 As label:
             FontWeight: =FontWeight.Semibold
@@ -87,22 +72,24 @@
             ZIndex: =6
 
         Label5 As label:
-            Height: =44
+            Height: =35
             OnSelect: =Select(Parent)
             Size: =14
-            Text: =ThisItem.product.name
-            Width: =127
-            X: =23
-            Y: =96
+            Text: |-
+                ="Product:" & ThisItem.product.name
+            Width: =223
+            X: =21
+            Y: =50
             ZIndex: =7
 
         Label5_1 As label:
-            Height: =47
+            Height: =32
             OnSelect: =Select(Parent)
             Size: =14
-            Text: =ThisItem.id
-            Width: =400
-            X: =134
-            Y: =51
+            Text: |-
+                ="Things ID:" & ThisItem.id
+            Width: =575
+            X: =310
+            Y: =16
             ZIndex: =8
 
