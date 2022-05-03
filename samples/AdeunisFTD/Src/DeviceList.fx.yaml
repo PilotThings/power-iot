@@ -4,18 +4,17 @@
     RectQuickActionBar1 As rectangle:
         BorderColor: =RGBA(0, 134, 208, 1)
         Fill: =RGBA(0, 134, 208, 1)
-        Height: =64
+        Height: =40
         Width: =Parent.Width
-        Y: =64
+        Y: =80
         ZIndex: =1
 
     Title1 As label:
         Align: =Align.Center
-        Height: =64
         PaddingRight: =10
         Text: ="Things list"
         Width: =Parent.Width
-        Y: =64
+        Y: =80
         ZIndex: =2
 
     "galThingsList As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
@@ -92,4 +91,14 @@
             X: =310
             Y: =16
             ZIndex: =8
+
+    Button1 As button:
+        Fill: =RGBA(0, 134, 208, 1)
+        Height: =44
+        OnSelect: =Navigate('FTD details')
+        Text: ="Go to Field test details"
+        Width: =266
+        X: =18
+        Y: =18
+        ZIndex: =4
 

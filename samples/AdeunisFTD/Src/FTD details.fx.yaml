@@ -6,23 +6,23 @@
         Text: |-
             =Concatenate(
                 LookUp(
-                    PilotThings.getLastMeasures(lblThingsId),
+                    PilotThings.getLastMeasures(lblThingsId.Text),
                     attribute.name = "temperature",
                     value
                 ),
                 " C"
             )
         Width: =66
-        X: =284
-        Y: =150
+        X: =275
+        Y: =222
         ZIndex: =2
 
     lblThingsId As label:
         Size: =14
         Text: =First(galThingsList.AllItems).id
         Width: =405
-        X: =116
-        Y: =28
+        X: =107
+        Y: =100
         ZIndex: =3
 
     Label2 As label:
@@ -31,8 +31,8 @@
         Text: |-
             ="FTD Id : "
         Width: =88
-        X: =28
-        Y: =24
+        X: =19
+        Y: =96
         ZIndex: =4
 
     Label3 As label:
@@ -42,15 +42,15 @@
         Size: =14
         Text: ="Last measurements"
         Width: =460
-        X: =28
-        Y: =104
+        X: =19
+        Y: =176
         ZIndex: =5
 
     Label4 As label:
         Size: =14
         Text: ="Temperature"
-        X: =28
-        Y: =150
+        X: =19
+        Y: =222
         ZIndex: =6
 
     Label8 As label:
@@ -70,8 +70,8 @@
                 "dd/mm/yyyy - hh:mm:ss"
             )
         Width: =191
-        X: =28
-        Y: =178
+        X: =19
+        Y: =250
         ZIndex: =10
 
     lblGPS As label:
@@ -84,16 +84,16 @@
                 value
             )
         Width: =237
-        X: =284
-        Y: =242
+        X: =275
+        Y: =314
         ZIndex: =11
 
     Label4_1 As label:
         Size: =14
         Text: ="GPS Localisation"
         Width: =228
-        X: =28
-        Y: =242
+        X: =19
+        Y: =314
         ZIndex: =12
 
     Label8_1 As label:
@@ -113,8 +113,8 @@
                 "dd/mm/yyyy - hh:mm:ss"
             )
         Width: =191
-        X: =28
-        Y: =270
+        X: =19
+        Y: =342
         ZIndex: =13
 
     "MapPoints As 'Carte (version préliminaire)'.pcfdataset":
@@ -148,6 +148,7 @@
             ZIndex: =2
 
     Button2 As button:
+        Fill: =RGBA(0, 134, 208, 1)
         Height: =39
         OnSelect: =Clear(mypoints)
         Text: ="Clear map"
@@ -157,23 +158,32 @@
         ZIndex: =16
 
     Button3 As button:
+        Fill: =RGBA(0, 134, 208, 1)
         Height: =42
         OnSelect: |-
             =Collect(
                 mypoints,
                 {latitude:First(Split(lblGPS.Text,",")).Result,longitude:Last(Split(lblGPS.Text,",")).Result}
             )
-        Text: ="Add to to map"
+        Text: ="Add to map"
         Width: =228
-        X: =274
-        Y: =320
+        X: =265
+        Y: =392
         ZIndex: =17
 
-    Icon1 As icon.HorizontalLine:
-        Height: =14
-        Icon: =Icon.HorizontalLine
-        Width: =488
+    Icon2 As icon.BackArrow:
+        Color: =RGBA(246, 88, 16, 1)
+        Icon: =Icon.BackArrow
+        OnSelect: =Back()
+        X: =18
+        Y: =18
+        ZIndex: =19
+
+    Rectangle1 As rectangle:
+        Fill: =RGBA(0, 134, 208, 1)
+        Height: =6
+        Width: =465
         X: =28
-        Y: =81
-        ZIndex: =18
+        Y: =149
+        ZIndex: =20
 
