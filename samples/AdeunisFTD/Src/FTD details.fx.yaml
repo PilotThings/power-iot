@@ -2,7 +2,7 @@
 
     Label1 As label:
         Height: =52
-        Size: =20
+        Size: =14
         Text: |-
             =Concatenate(
                 LookUp(
@@ -76,7 +76,7 @@
 
     lblGPS As label:
         Height: =66
-        Size: =20
+        Size: =14
         Text: |-
             =LookUp(
                 PilotThings.getLastMeasures(lblThingsId),

@@ -25,7 +25,7 @@
     "LastModifiedTimestamp": "0",
     "Name": "button",
     "OverridableProperties": {},
-    "Version": "2.1.0"
+    "Version": "2.2.0"
   },
   "Carte (version préliminaire)": {
     "CustomGroupControlTemplateName": "",
@@ -71,7 +71,7 @@
             }
           ]
         },
-        "Version": "1.323"
+        "Version": "1.324"
       },
       "CenterLocation": {
         "Type": {
@@ -93,7 +93,7 @@
             }
           ]
         },
-        "Version": "1.323"
+        "Version": "1.324"
       },
       "ClickedLocation": {
         "Type": {
@@ -115,7 +115,7 @@
             }
           ]
         },
-        "Version": "1.323"
+        "Version": "1.324"
       },
       "DeletedShape": {
         "Type": {
@@ -161,7 +161,7 @@
             }
           ]
         },
-        "Version": "1.323"
+        "Version": "1.324"
       },
       "GeocodedItems": {
         "Type": {
@@ -195,7 +195,7 @@
             }
           ]
         },
-        "Version": "1.323"
+        "Version": "1.324"
       },
       "RouteDirection": {
         "Type": {
@@ -333,7 +333,7 @@
             }
           ]
         },
-        "Version": "1.323"
+        "Version": "1.324"
       },
       "SelectedShape": {
         "Type": {
@@ -379,7 +379,7 @@
             }
           ]
         },
-        "Version": "1.323"
+        "Version": "1.324"
       }
     },
     "PCFDynamicSchemaForIRRetrieval": {
@@ -427,7 +427,7 @@
     "LastModifiedTimestamp": "0",
     "Name": "gallery",
     "OverridableProperties": {},
-    "Version": "2.12.0"
+    "Version": "2.13.0"
   },
   "galleryTemplate": {
     "CustomGroupControlTemplateName": "",
@@ -465,7 +465,7 @@
     "LastModifiedTimestamp": "0",
     "Name": "icon",
     "OverridableProperties": {},
-    "Version": "2.4.0"
+    "Version": "2.5.0"
   },
   "label": {
     "CustomGroupControlTemplateName": "",
@@ -479,7 +479,7 @@
     "LastModifiedTimestamp": "0",
     "Name": "label",
     "OverridableProperties": {},
-    "Version": "2.4.0"
+    "Version": "2.5.0"
   },
   "pcfDataField": {
     "CustomGroupControlTemplateName": "",
@@ -493,7 +493,7 @@
     "LastModifiedTimestamp": "0",
     "Name": "pcfDataField",
     "OverridableProperties": {},
-    "Version": "1.3.0"
+    "Version": "1.4.0"
   },
   "rectangle": {
     "CustomGroupControlTemplateName": "",
@@ -507,7 +507,7 @@
     "LastModifiedTimestamp": "0",
     "Name": "rectangle",
     "OverridableProperties": {},
-    "Version": "2.2.0"
+    "Version": "2.3.0"
   },
   "screen": {
     "CustomGroupControlTemplateName": "",
