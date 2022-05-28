@@ -111,6 +111,7 @@
       "enableunifiedclientcdn": "Enable UCI CDN for organization",
       "enableunifiedinterfaceshellrefresh": "Enable site map and commanding update",
       "enforcereadonlyplugins": "Organization setting to enforce read only plugins.",
+      "enforcevalidations": "Enforce validations for this organization's apps",
       "entityimage": "Entity Image",
       "entityimageid": "Entity Image Id",
       "expirechangetrackingindays": "Days to Expire Change Tracking Deleted Records",
@@ -166,6 +167,7 @@
       "isautodatacaptureenabled": "Enable Auto Capture for this Organization",
       "isautodatacapturev2enabled": "Enable Auto Capture V2 for this Organization",
       "isautosaveenabled": "Auto Save Enabled",
+      "isbasicgeospatialintegrationenabled": "Enable the basic Geospatial features in Canvas Apps",
       "isbpfentitycustomizationfeatureenabled": "BPF Entity Customization Feature enabled",
       "iscollaborationexperienceenabled": "IsCollaborationExperienceEnabled",
       "isconflictdetectionenabledformobileclient": "Is Conflict Detection for Mobile Client enabled",
@@ -222,6 +224,8 @@
       "isrelationshipinsightsenabled": "Enable Relationship Insights for this Organization",
       "isresourcebookingexchangesyncenabled": "Resource booking synchronization enabled",
       "isrichtextnotesenabled": "Indicates whether rich text editor for notes experience is enabled on this organization",
+      "isrpaautoscaleenabled": "Enable RPA Autoscale feature for this organization",
+      "isrpaunattendedenabled": "Enable RPA Unattended feature for this organization",
       "issalesassistantenabled": "Enable Sales Assistant mobile app",
       "issharinginorgallowed": "IsSharingInOrgAllowed",
       "issopintegrationenabled": "Is Sales Order Integration Enabled",
@@ -1607,8 +1611,24 @@
         "OptionSetReferenceColumnName": "paipreviewscenarioenabled",
         "OptionSetReferenceEntityName": "Organizations"
       },
+      "OptionSetReferenceItem68": {
+        "OptionSetReferenceColumnName": "enforcevalidations",
+        "OptionSetReferenceEntityName": "Organizations"
+      },
+      "OptionSetReferenceItem69": {
+        "OptionSetReferenceColumnName": "isbasicgeospatialintegrationenabled",
+        "OptionSetReferenceEntityName": "Organizations"
+      },
       "OptionSetReferenceItem7": {
         "OptionSetReferenceColumnName": "isresourcebookingexchangesyncenabled",
+        "OptionSetReferenceEntityName": "Organizations"
+      },
+      "OptionSetReferenceItem70": {
+        "OptionSetReferenceColumnName": "isrpaautoscaleenabled",
+        "OptionSetReferenceEntityName": "Organizations"
+      },
+      "OptionSetReferenceItem71": {
+        "OptionSetReferenceColumnName": "isrpaunattendedenabled",
         "OptionSetReferenceEntityName": "Organizations"
       },
       "OptionSetReferenceItem8": {

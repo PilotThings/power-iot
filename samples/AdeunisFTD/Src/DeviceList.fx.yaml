@@ -1,4 +1,5 @@
 "DeviceList As screen.'tabletLayout_HeaderAndGallery_ver3.0'":
+    Fill: =
     OnVisible: =
 
     RectQuickActionBar1 As rectangle:

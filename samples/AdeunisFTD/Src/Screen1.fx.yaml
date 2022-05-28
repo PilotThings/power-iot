@@ -1,0 +1,8 @@
+Screen1 As screen:
+
+    Label6 As label:
+        Text: =PowerAppspourlescréateurs.GetConnector("PilotThings").properties.connectionParameters.token
+        X: =40
+        Y: =40
+        ZIndex: =1
+
