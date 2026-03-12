@@ -25,6 +25,14 @@ The Pilot Things connector enables you to:
 - Perform device operations
 - Integrate sensor data models with business applications
 
+### ✅ Certified Microsoft Power Platform Connector
+
+The Pilot Things Power IoT connector is a **certified connector** in Microsoft Power Platform.
+
+Certification means the connector is reviewed and validated by Microsoft for quality, reliability, and security, and is available through the official certified connectors program.
+
+- Certified connector reference: [Pilot Things (Microsoft Power Platform Connectors repository)](https://github.com/microsoft/PowerPlatformConnectors/tree/dev/certified-connectors/Pilot%20Things)
+
 ## Prerequisites
 
 Before using these samples, you'll need:
@@ -46,7 +54,7 @@ You must have an active [Device Explorer](https://www.pilot-things.com/iot-senso
 
 ### 3. Pilot Things Connector Setup
 
-The Pilot Things connector must be configured in your Power Apps environment. The connector is available in the Microsoft Power Platform connector catalog.
+The Pilot Things connector must be configured in your Power Apps environment. The connector is available in the Microsoft Power Platform connector catalog as a certified connector.
 
 ## Getting Started
 
